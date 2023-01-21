@@ -1,0 +1,9 @@
+https://ccadb-public.secure.force.com/microsoft/IncludedRootsPEMTxtForMSFT?MicrosoftEKUs=Code%20Signing
+https://ccadb-public.secure.force.com/mozilla/IncludedRootsPEMTxt?TrustBitsInclude=Email
+https://ccadb-public.secure.force.com/mozilla/IncludedRootsDistrustSMIMEPEMCSV?TrustBitsInclude=Email
+https://ccadb-public.secure.force.com/mozilla/IncludedRootsPEMTxt?TrustBitsInclude=Websites
+https://ccadb-public.secure.force.com/mozilla/IncludedRootsDistrustTLSSSLPEMCSV?TrustBitsInclude=Websites
+https://ccadb-public.secure.force.com/ccadb/AllCertificateRecordsCSVFormat
+https://ccadb-public.secure.force.com/ccadb/AllProblemReportingMechanismsReport
+https://ccadb-public.secure.force.com/ccadb/AllCAAIdentifiersReport
+https://ccadb-public.secure.force.com/ccadb/AllCAAIdentifiersReportCSV
