@@ -1,0 +1,3799 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="1707136 - Add GSE SMIME Roots to Mozilla root store">
+<meta property="og:url" content="https://bugzilla.mozilla.org/show_bug.cgi?id=1707136">
+<meta property="og:description"
+      content="ASSIGNED (bwilson) in CA Program - CA Certificate Root Program. Last updated 2023-01-16.">
+<meta name="twitter:label1" value="Type">
+<meta name="twitter:data1" value="task">
+<meta name="twitter:label2" value="Priority">
+<meta name="twitter:data2" value="P2">
+
+    <meta name="viewport" content="width=1024">
+    <meta name="color-scheme" content="dark light">
+    <meta name="generator" content="Bugzilla 20230126.1">
+    <meta name="bugzilla-global" content="dummy"
+        id="bugzilla-global" data-bugzilla="{&quot;api_token&quot;:&quot;&quot;,&quot;config&quot;:{&quot;basepath&quot;:&quot;\/&quot;},&quot;constant&quot;:{&quot;COMMENT_COLS&quot;:80},&quot;param&quot;:{&quot;maxattachmentsize&quot;:&quot;10240&quot;,&quot;maxusermatches&quot;:&quot;50&quot;,&quot;splinter_base&quot;:&quot;\/page.cgi?id=splinter.html&amp;ignore=\/&quot;},&quot;string&quot;:{&quot;bug_type_required&quot;:&quot;You must select a Type for this bug&quot;,&quot;component_required&quot;:&quot;You must select a Component for this bug&quot;,&quot;description_required&quot;:&quot;You must enter a Description for this bug&quot;,&quot;short_desc_required&quot;:&quot;You must enter a Summary for this bug&quot;,&quot;version_required&quot;:&quot;You must select a Version for this bug&quot;},&quot;user&quot;:{&quot;is_new&quot;:1,&quot;login&quot;:&quot;&quot;}}">
+    <title>1707136 - Add GSE SMIME Roots to Mozilla root store</title>
+
+<link rel="Top" href="/">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="/showdependencytree.cgi?id=1707136&amp;hide_resolved=1">
+      <link rel="Show" title="Dependency Graph"
+            href="/showdependencygraph.cgi?id=1707136">
+
+      <link rel="Show" title="Bug Activity"
+            href="/show_activity.cgi?id=1707136">
+
+<link href="/static/v20230126.1/skins/yui.css" rel="stylesheet" type="text/css"><link href="/static/v20230126.1/skins/standard/global.css" rel="stylesheet" type="text/css"><link href="/static/v20230126.1/extensions/BugModal/web/bug_modal.css" rel="stylesheet" type="text/css"><link href="/static/v20230126.1/js/jquery/plugins/contextMenu/contextMenu.css" rel="stylesheet" type="text/css"><link href="/static/v20230126.1/extensions/BMO/web/styles/bug_modal.css" rel="stylesheet" type="text/css"><link href="/static/v20230126.1/extensions/EditComments/web/styles/inline-editor.css" rel="stylesheet" type="text/css"><link href="/static/v20230126.1/js/jquery/ui/jquery-ui-min.css" rel="stylesheet" type="text/css"><link href="/static/v20230126.1/js/jquery/ui/jquery-ui-structure-min.css" rel="stylesheet" type="text/css"><link href="/static/v20230126.1/js/jquery/ui/jquery-ui-theme-min.css" rel="stylesheet" type="text/css"><link href="/static/v20230126.1/skins/lib/prism.css" rel="stylesheet" type="text/css"><link href="/static/v20230126.1/extensions/Needinfo/web/styles/needinfo.css" rel="stylesheet" type="text/css"><link href="/static/v20230126.1/extensions/Review/web/styles/badge.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/js/jquery/jquery-min.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/js/jquery/ui/jquery-ui-min.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/js/yui.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/js/jquery/plugins/contextMenu/contextMenu-min.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/js/jquery/plugins/devbridgeAutocomplete/devbridgeAutocomplete-min.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/js/global.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/js/util.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/js/dropdown.js"></script>
+
+      <script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5">
+          YAHOO.namespace('bugzilla');
+          if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+              YAHOO.util.Event._simpleRemove(window, "unload",
+                                             YAHOO.util.Event._unload);
+          }BUGZILLA.value_descs = JSON.parse('{\"bug_status\":{},\"resolution\":{\"\":\"---\"}}');
+
+  
+    var tracking_flags_str = "{\"flags\":{\"tracking\":{\"cf_tracking_firefox109\":\"---\",\"cf_tracking_firefox_esr102\":\"---\",\"cf_tracking_firefox110\":\"---\",\"cf_status_firefox_esr102\":\"---\",\"cf_status_firefox110\":\"---\",\"cf_tracking_firefox_relnote\":\"---\",\"cf_status_firefox109\":\"---\",\"cf_tracking_firefox111\":\"---\",\"cf_status_firefox111\":\"---\"}},\"comments\":{\"cf_tracking_firefox_esr102\":{\"?\":\"[Tracking Requested - why for this release]:\"},\"cf_tracking_firefox111\":{\"?\":\"[Tracking Requested - why for this release]:\"},\"cf_tracking_firefox109\":{\"?\":\"[Tracking Requested - why for this release]:\"},\"cf_tracking_firefox110\":{\"?\":\"[Tracking Requested - why for this release]:\"},\"cf_tracking_firefox_relnote\":{\"?\":\"Release Note Request (optional, but appreciated)\\n[Why is this notable]:\\n[Affects Firefox for Android]:\\n[Suggested wording]:\\n[Links (documentation, blog post, etc)]:\"}},\"types\":[\"tracking\"]}";
+    var TrackingFlags = $.parseJSON(tracking_flags_str);
+
+  
+
+  
+  BUGZILLA.bug_id = 1707136;
+  BUGZILLA.bug_title = '1707136 - Add GSE SMIME Roots to Mozilla root store';
+  BUGZILLA.bug_summary = 'Add GSE SMIME Roots to Mozilla root store';
+  BUGZILLA.bug_url = 'https:\/\/bugzilla.mozilla.org\/show_bug.cgi?id=1707136';
+  BUGZILLA.bug_keywords = '',
+  BUGZILLA.user = {
+    id: 0,
+    login: '',
+    is_insider: false,
+    is_timetracker: false,
+    can_tag: false,
+    can_triage: false,
+    timezone: 'America\/Los_Angeles',
+    settings: {
+      quote_replies: 'quoted_reply',
+      zoom_textareas: true,
+      remember_collapsed: true,
+      inline_attachments: true,
+      autosize_comments: false
+    }
+  };
+
+  BUGZILLA.bug_secure = false;
+      </script>
+<script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/extensions/BugModal/web/autosize.min.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/extensions/ProdCompSearch/web/js/prod_comp_search.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/extensions/BugModal/web/bug_modal.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/extensions/BugModal/web/comments.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/extensions/ComponentWatching/web/js/overlay.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/js/bugzilla-readable-status-min.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/js/field.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/js/comments.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/extensions/TrackingFlags/web/js/flags.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/extensions/BMO/web/js/firefox-crash-table.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/extensions/MozChangeField/web/js/severity-s1-priority-p1.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/extensions/MozChangeField/web/js/clear-tracking-priority-s1.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/extensions/MozChangeField/web/js/set-tracking-severity-s1.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/js/lib/prism.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/extensions/GoogleAnalytics/web/js/analytics.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/js/lib/md5.min.js"></script><script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5" src="/static/v20230126.1/extensions/Review/web/js/badge.js"></script>
+
+    
+
+    
+    <link href="/static/v20230126.1/skins/lib/fontawesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/v20230126.1/skins/lib/fontawesome-brands.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/v20230126.1/skins/lib/fontawesome-solid.min.css" rel="stylesheet" type="text/css">
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla@Mozilla" href="/search_plugin.cgi"><link rel="shortcut icon" href="/extensions/BMO/web/images/favicon.ico">
+<link rel="canonical" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1707136">
+<link rel="shorturl" href="https://bugzilla.mozilla.org/1707136"><meta name="google-analytics" content="UA-36116321-3" data-location="https://bugzilla.mozilla.org/bug/show-modal" data-title="1707136 - Add GSE SMIME Roots to Mozilla root store">
+<script async src="https://www.google-analytics.com/analytics.js"></script><meta name="robots" content="noarchive">
+  </head>
+
+
+
+  <body
+        class="bugzilla-mozilla-org
+               skin-standard bug_modal yui-skin-sam">
+
+
+
+<div id="wrapper">
+
+<header id="header" role="banner">
+  <div class="inner">
+    <h1 id="header-title" class="title"><a href="https://bugzilla.mozilla.org/home" title="Go to home page">Bugzilla</a></h1>
+    <form role="search" id="header-search" class="quicksearch" action="/buglist.cgi" data-no-csrf>
+      <section class="searchbox-outer dropdown" role="combobox" aria-expanded="false" aria-haspopup="listbox"
+               aria-labelledby="header-search-label" aria-owns="header-search-dropdown">
+        <h2 id="header-search-label">Quick Search</h2>
+        <span class="icon" aria-hidden="true"></span>
+        <input role="searchbox" id="quicksearch_top" class="dropdown-button" name="quicksearch" autocomplete="off"
+               value="" placeholder="Search Bugs"
+               title="Enter a bug number or some search terms" aria-controls="header-search-dropdown"
+               aria-label="Quick Search"><div id="header-search-dropdown" class="dropdown-content right" role="listbox" style="display: none;">
+  <div id="header-search-dropdown-wrapper">
+  </div>
+</div>
+      </section>
+    </form>
+    <nav id="header-nav">
+      <ul class="links">
+        <li class="link-browse">
+          <a href="/describecomponents.cgi" title="Browse bugs by component">
+            <span class="icon" aria-hidden="true"></span>
+            <span class="label">Browse</span>
+          </a>
+        </li>
+        <li class="link-search">
+          <a href="/query.cgi?format=advanced" title="Search bugs using various criteria">
+            <span class="icon" aria-hidden="true"></span>
+            <span class="label">Advanced Search</span>
+          </a>
+        </li>
+      </ul>
+      <div class="dropdown">
+        <button type="button" id="header-tools-menu-button" class="dropdown-button minor" title="More tools…"
+                aria-label="More tools…" aria-expanded="false" aria-haspopup="true" aria-controls="header-tools-menu">
+          <span class="icon" aria-hidden="true"></span>
+        </button>
+        <ul class="dropdown-content left" id="header-tools-menu" role="menu" style="display:none;">
+          <li role="presentation">
+            <a href="/report.cgi" role="menuitem" tabindex="-1">Reports</a>
+          </li>
+            <li role="separator"></li>
+            <li role="presentation">
+              <a href="https://bmo.readthedocs.io/en/latest/" role="menuitem" tabindex="-1">Documentation</a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+      <ul id="header-login" class="links">
+          <li id="moz_new_account_container_top"><a href="/createaccount.cgi">New Account</a></li><li id="mini_login_container_top">
+  <a id="login_link_top" href="/index.cgi?GoAheadAndLogIn=1"
+     class='show_mini_login_form' data-qs-suffix="_top">Log In</a>
+
+  <div id="mini_login_top" class="mini-popup mini_login bz_default_hidden">
+
+<form method="post" action="/github.cgi">
+    <input type="hidden" name="github_token" value="LxpoUYsN9upCAlUGko9QJJLy0gdbhoNnmOEdYaCyhfCMSBL1ra2kL5TLswstnZu3qah8kEgSUjYfoM1TGGdwb5SES8eXKNmhlaoSTAYtUbym9aTOkxZcjZfz9ss7L70ijf0zcCsJTYP99QUP9GsGFt9iP0mdbbufjQh6qKYLBQSohAa9N786ebAJYRYn4WQqx0isQhFifGl1Q3wFS1nlkHBbMANiqB62g9xQB9BUjWsIEaLZ6WR3P6bsIFIlEIKV">
+    <input type="hidden" name="target_uri" value="https://bugzilla.mozilla.org/show_bug.cgi">
+    <button type="submit">
+      <i class="fab fa-github"></i> Login with GitHub
+    </button>
+  </form>
+
+  <form action="/show_bug.cgi?id=1707136" method="POST"
+        data-qs-suffix="_top">
+
+    <input id="Bugzilla_login_top"
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           placeholder="Email"
+           aria-label="Email"
+           type="email"
+           required
+    >
+    <input class="bz_password"
+           id="Bugzilla_password_top"
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+           placeholder="Password"
+           aria-label="Password"
+           required
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text"
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+    >
+      <input type="checkbox" id="Bugzilla_remember_top"
+             name="Bugzilla_remember" value="on" class="bz_remember"
+                 checked>
+      <label for="Bugzilla_remember_top">Remember</label>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1675575557-ddhC9JMZPXJFjITGXyvvaD5jezVvU3evdcHJZT5UsbE">
+    <input type="submit" name="GoAheadAndLogIn" value="Log in"
+           class="check_mini_login_fields"
+            id="log_in_top">
+    <a href="#" id="hide_mini_login_top" aria-label="Close"
+       class="close-button hide_mini_login_form" data-qs-suffix="_top">
+      <span class="icon" aria-hidden="true"></span>
+    </a>
+  </form>
+  </div>
+</li>
+<li id="forgot_container_top">
+  <a id="forgot_link_top" href="/index.cgi?GoAheadAndLogIn=1#forgot"
+     class='show_forgot_form'
+     data-qs-suffix="_top">Forgot Password</a>
+  <div id="forgot_form_top" class="mini-popup mini_forgot bz_default_hidden">
+  <form action="/token.cgi" method="post">
+    <input type="email" name="loginname" size="20" placeholder="Email" aria-label="Email" required>
+    <input id="forgot_button_top" value="Reset Password"
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1675575557-5V4FqmQfCW7AgXUd8PK5XGAzHgzCTHHIAf7pyux5uGU">
+    <a href="#" class="close-button hide_forgot_form" aria-label="Close" data-qs-suffix="_top">
+      <span class="icon" aria-hidden="true"></span>
+    </a>
+  </form>
+  </div>
+</li>
+      </ul><div id="header-external-links" class="dropdown first">
+  <button type="button" id="header-external-menu-button" class="dropdown-button minor" title="Mozilla"
+          aria-label="Mozilla" aria-expanded="false" aria-haspopup="true" aria-controls="header-external-menu">
+    <img src="/static/v20230126.1/extensions/BMO/web/images/moz-fav-one-color-white-rgb.svg" width="32" height="32" alt="">
+  </button>
+  <ul class="dropdown-content right" id="header-external-menu" role="menu" style="display:none;">
+    <li role="presentation">
+      <a href="https://www.mozilla.org/" role="menuitem" tabindex="-1">Mozilla Home</a>
+    </li>
+    <li role="separator"></li>
+    <li role="presentation">
+      <a href="https://www.mozilla.org/privacy/websites/" role="menuitem" tabindex="-1">Privacy</a>
+    </li>
+    <li role="presentation">
+      <a href="https://www.mozilla.org/privacy/websites/#cookies" role="menuitem" tabindex="-1">Cookies</a>
+    </li>
+    <li role="presentation">
+      <a href="https://www.mozilla.org/about/legal/" role="menuitem" tabindex="-1">Legal</a>
+    </li>
+  </ul>
+</div>
+  </div>
+</header> 
+
+
+<main id="bugzilla-body" tabindex="-1">
+
+<aside id="message-container" role="complementary">
+  <noscript>
+    <div class="noscript">
+      <div class="inner">
+        <p>Please enable JavaScript in your browser to use all the features on this site.</p>
+      </div>
+    </div>
+  </noscript>
+</aside>
+
+<div id="main-inner">
+
+
+
+
+<div role="toolbar" id="page-toolbar">
+  <div role="group" class="buttons">
+    <button type="button" id="copy-summary" class="secondary separate-dropdown-button-main"
+      title="Copy bug number and summary to your clipboard">Copy Summary</button
+    ><div id="copy-menu-dropdown" class="dropdown"><button type="button" id="copy-menu-btn" aria-haspopup="true" aria-label="View"
+      aria-expanded="false" aria-controls="copy-menu" class="dropdown-button secondary separate-dropdown-button-arrow"
+      title="More options for copy">&#9662;</button>
+      <ul class="dropdown-content left" id="copy-menu" role="menu" style="display:none;">
+        <li role="presentation">
+          <a id="copy-markdown-summary" role="menuitem" tabindex="-1">Markdown</a>
+        </li>
+        <li role="presentation">
+          <a id="copy-markdown-bug-number" role="menuitem" tabindex="-1">Markdown (bug number)</a>
+        </li>
+        <li role="presentation">
+          <a id="copy-text-summary" role="menuitem" tabindex="-1">Plain Text</a>
+        </li>
+        <li role="presentation">
+          <a id="copy-html-summary" role="menuitem" tabindex="-1">HTML</a>
+        </li>
+      </ul>
+    </div>
+    <div id="clip-container" style="display:none"><input type="text" id="clip"></div>
+    <div class="dropdown">
+      <button type="button" id="action-menu-btn" aria-haspopup="true" aria-label="View"
+        aria-expanded="false" aria-controls="action-menu" class="dropdown-button secondary">View &#9662;</button>
+      <ul class="dropdown-content left" id="action-menu" role="menu" style="display:none;">
+        <li role="presentation">
+          <a id="action-reset" role="menuitem" tabindex="-1">Reset Sections</a>
+        </li>
+        <li role="presentation">
+          <a id="action-expand-all" role="menuitem" tabindex="-1">Expand All Sections</a>
+        </li>
+        <li role="presentation">
+          <a id="action-collapse-all" role="menuitem" tabindex="-1">Collapse All Sections</a>
+        </li>
+        <li role="separator"></li>
+        <li role="presentation">
+          <a id="action-history" role="menuitem" tabindex="-1">History</a>
+        </li>
+        <li role="separator"></li>
+        <li role="presentation">
+          <a href="/rest/bug/1707136" role="menuitem" tabindex="-1">JSON</a>
+        </li>
+        <li role="presentation">
+          <a href="/show_bug.cgi?ctype=xml&amp;id=1707136" role="menuitem" tabindex="-1">XML</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div role="status" id="io-error" style="display:none"></div>
+<div role="status" id="floating-message" style="display:none">
+  <div id="floating-message-text"></div>
+</div>
+<section class="module"
+>
+  <div class="module-content"
+  >
+  <div id="summary-container">
+    <div class="field indent" id="field-status_summary"
+>
+
+
+  
+    <div class=" container">
+        <span id="field-value-status_summary">
+      <span class="bug-status-label text" data-status="open">Open</span>
+      <span id="field-value-bug_id">
+        <a href="/show_bug.cgi?id=1707136">Bug 1707136</a>
+      </span>
+      <span>
+        <span class="bug-time-label">Opened <span class="rel-time" title="2021-04-22 17:01 PDT" data-time="1619136073">2 years ago</span></span>
+          <span class="bug-time-label">Updated <span class="rel-time" title="2023-01-16 14:30 PST" data-time="1673908249">19 days ago</span></span>
+      </span>
+        </span>
+    </div>
+
+  
+</div>
+<div class="field indent edit-hide"
+>
+
+
+  
+    <div class=" container">
+      
+
+      <h1 id="field-value-short_desc">Add GSE SMIME Roots to Mozilla root store</h1>
+    </div>
+
+  
+</div>
+
+    <div class="field edit-show" id="field-short_desc" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#short_desc" id="short_desc-help-link" class="help">Summary:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-short_desc">
+            Add GSE SMIME Roots to Mozilla root store
+
+        </span>
+    </div>
+
+  
+</div>
+  </div>
+  </div>
+</section>
+
+
+<section class="module" id="module-categories"
+>
+    <header id="module-categories-header" class="module-header">
+      <div class="module-latch"
+           data-label-expanded="Collapse Categories section"
+           data-label-collapsed="Expand Categories section">
+        <div class="module-spinner" role="button" tabindex="0"
+             aria-controls="module-categories-content"
+             aria-expanded="true"
+             aria-labeledby="module-categories-title"
+             aria-describedby="module-categories-subtitle"></div>
+        <h2 class="module-title" id="module-categories-title">Categories</h2>
+          <h3 class="module-subtitle" id="module-categories-subtitle">
+            (CA Program :: CA Certificate Root Program, task, P2)
+          </h3>
+      </div>
+    </header>
+  <div class="module-content" id="module-categories-content"
+  ><div class="fields-lhs">
+
+    <div class="field" id="field-product"
+>
+    <div class="name">
+        <a href="/describecomponents.cgi?product=CA%20Program" id="product-help-link" class="help">Product:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-product">
+      <div class="name-info-outer dropdown">
+        <span id="product-name" class="dropdown-button" tabindex="0" role="button"
+             aria-haspopup="menu" aria-controls="product-info">CA Program
+          <span class="icon" aria-hidden="true">&#x25BE;</span>
+        </span>
+        <aside id="product-info" class="name-info-popup dropdown-content right hover-display" hidden role="menu"
+               aria-label="Product description and actions">
+          <header>
+            <div class="title">CA Program</div>
+            <div class="description">Issues related to the Certificate Authority Program</div>
+          </header>
+          <li role="separator"></li>
+          <div class="actions">
+            <div><a href="/buglist.cgi?product=CA%20Program&amp;bug_status=__open__"
+                    target="_blank" role="menuitem" tabindex="-1">See Open Bugs in This Product</a></div>
+            <div><a href="/enter_bug.cgi?product=CA%20Program"
+                    target="_blank" role="menuitem" tabindex="-1">File New Bug in This Product</a></div>
+            <div><button disabled type="button" class="secondary component-watching" role="menuitem" tabindex="-1"
+                         data-product="CA Program"
+                         data-label-watch="Watch This Product" data-label-unwatch="Unwatch This Product"
+                         data-source="BugModal">Watch This Product</button></div>
+          </div>
+        </aside>
+      </div>
+        </span>
+    </div>
+
+  
+</div>
+
+    <div class="field" id="field-component"
+>
+    <div class="name">
+        <a href="/describecomponents.cgi?product=CA%20Program&component=CA%20Certificate%20Root%20Program#CA%20Certificate%20Root%20Program" id="component-help-link" class="help">Component:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-component">
+      <div class="name-info-outer dropdown">
+        <span id="component-name" class="dropdown-button" tabindex="0" role="button"
+             aria-haspopup="menu" aria-controls="component-info">CA Certificate Root Program
+          <span class="icon" aria-hidden="true">&#x25BE;</span>
+        </span>
+        <aside id="component-info" class="name-info-popup dropdown-content right hover-display" hidden role="menu"
+               aria-label="Component description and actions">
+          <header>
+            <div class="title">CA Program :: CA Certificate Root Program</div>
+            <div class="description">For Certificate Authorities to file requests asking for their certificates to be included in the default certificate store.</div>
+          </header>
+          <li role="separator"></li>
+          <div class="actions">
+            <div><a href="/buglist.cgi?product=CA%20Program&amp;component=CA%20Certificate%20Root%20Program&amp;bug_status=__open__"
+                    target="_blank" role="menuitem" tabindex="-1">See Open Bugs in This Component</a></div>
+            <div><a href="/buglist.cgi?product=CA%20Program&amp;component=CA%20Certificate%20Root%20Program&amp;chfield=resolution&chfieldfrom=-6m&chfieldvalue=FIXED&bug_status=__closed__"
+                    target="_blank" role="menuitem" tabindex="-1">Recently Fixed Bugs in This Component</a></div>
+            <div><a href="/enter_bug.cgi?product=CA%20Program&amp;component=CA%20Certificate%20Root%20Program"
+                    target="_blank" role="menuitem" tabindex="-1">File New Bug in This Component</a></div>
+            <div><button disabled type="button" class="secondary component-watching" role="menuitem" tabindex="-1"
+                         data-product="CA Program" data-component="CA Certificate Root Program"
+                         data-label-watch="Watch This Component" data-label-unwatch="Unwatch This Component"
+                         data-source="BugModal">Watch This Component</button></div>
+          </div>
+        </aside>
+      </div>
+        </span>
+    </div>
+
+  
+</div>
+
+    <div class="field" id="field-version"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#version" id="version-help-link" class="help">Version:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-version">
+            4.0
+
+        </span>
+    </div>
+
+  
+</div>
+
+    <div class="field edit-show" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#rep_platform" id="-help-link" class="help">Platform:
+        </a>
+    </div>
+
+
+  
+    <div class=" container"><div class="field inline" id="field-rep_platform"
+>
+
+
+  
+    <div class="value">
+        <span id="field-value-rep_platform">
+            Unspecified
+
+        </span>
+    </div>
+
+  
+</div><div class="field indent inline" id="field-op_sys"
+>
+
+
+  
+    <div class="value">
+        <span id="field-value-op_sys">
+            Unspecified
+
+        </span>
+    </div>
+
+  
+</div><div class="field"
+>
+
+
+  
+    <div class=" container">
+    </div>
+
+  
+</div>
+    </div>
+
+  
+</div>
+</div><div class="fields-rhs">
+
+    <div class="field contains-buttons" id="field-bug_type"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#bug_type" id="bug_type-help-link" class="help">Type:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-bug_type">
+      <span class="bug-type-label iconic-text" data-type="task">
+        <span class="icon" aria-hidden="true"></span>task</span>
+        </span>
+    </div>
+
+  
+</div>
+
+    <div class="field" id="field-importance"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#priority" id="importance-help-link" class="help">Priority:
+        </a>
+    </div>
+
+
+  
+    <div class=" container">
+        <span id="field-value-importance"><div class="field inline" id="field-priority"
+>
+
+
+  
+    <div class="value">
+        <span id="field-value-priority">P2
+        </span>
+    </div>
+
+  
+</div><div class="field inline" id="field-bug_severity"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#bug_severity" id="bug_severity-help-link" class="help">Severity:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-bug_severity">
+            --
+
+        </span>
+    </div>
+
+  
+</div>
+        </span>
+    </div>
+
+  
+</div>
+
+
+    
+</div>
+  </div>
+</section>
+
+
+<section class="module" id="module-tracking"
+>
+    <header id="module-tracking-header" class="module-header">
+      <div class="module-latch"
+           data-label-expanded="Collapse Tracking section"
+           data-label-collapsed="Expand Tracking section">
+        <div class="module-spinner" role="button" tabindex="0"
+             aria-controls="module-tracking-content"
+             aria-expanded="true"
+             aria-labeledby="module-tracking-title"
+             aria-describedby="module-tracking-subtitle"></div>
+        <h2 class="module-title" id="module-tracking-title">Tracking</h2>
+          <h3 class="module-subtitle" id="module-tracking-subtitle">
+            (Not tracked)
+          </h3>
+      </div>
+    </header>
+  <div class="module-content" id="module-tracking-content"
+  ><div class="fields-lhs">
+
+    <div class="field edit-hide" id="field-status-view"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugStatuses" id="status-view-help-link" class="help">Status:
+        </a>
+    </div>
+
+
+  
+    <div class=" container">
+        <span id="field-value-status-view">ASSIGNED
+        
+        </span>
+    </div>
+
+  
+</div>
+
+    <div class="field edit-show" id="field-status-edit" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugStatuses" id="status-edit-help-link" class="help">Status:
+        </a>
+    </div>
+
+
+  
+    <div class=" container">
+        <span id="field-value-status-edit"><div class="field inline" id="field-bug_status"
+>
+
+
+  
+    <div class="value">
+        <span id="field-value-bug_status">
+            ASSIGNED
+
+        </span>
+    </div>
+
+  
+</div><div class="field indent inline" id="field-resolution"
+>
+
+
+  
+    <div class="value">
+        <span id="field-value-resolution">
+        ---
+        </span>
+    </div>
+
+  
+</div>
+  <div id="status-action-buttons">
+      <div id="assigned-container" style="display:none">
+        <button type="button" class="secondary" id="mark-as-assigned-btn">
+          Mark as Assigned
+        </button>
+      </div>
+  </div>
+        </span>
+    </div>
+
+  
+</div>
+
+    <div class="field edit-show" id="field-target_milestone" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#target_milestone" id="target_milestone-help-link" class="help">Milestone:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-target_milestone">
+            ---
+
+        </span>
+    </div>
+
+  
+</div>
+
+    
+
+
+</div><div class="fields-rhs">
+
+      <div class="field edit-show" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide#Tracking_Flags" id="-help-link" class="help">Tracking Flags:
+        </a>
+    </div>
+
+
+  
+    <div class=" container"><div class="flags edit-show" style="display:none">
+  <table class="layout-table tracking-flags">
+      <tr>
+        <th></th>
+        <th>Tracking</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td class="tracking-flag-name">relnote-firefox</td>
+          <td class="tracking-flag-tracking"></td>
+        <td class="tracking-flag-status"><input type="hidden" id="cf_tracking_firefox_relnote-dirty">
+  <select id="cf_tracking_firefox_relnote" name="cf_tracking_firefox_relnote">
+        <option value="---"
+          id="v539_cf_tracking_firefox_relnote" selected
+        >---
+        </option>
+  </select></td>
+      </tr>
+      <tr>
+        <td class="tracking-flag-name">firefox-esr102</td>
+          <td class="tracking-flag-tracking"><input type="hidden" id="cf_tracking_firefox_esr102-dirty">
+  <select id="cf_tracking_firefox_esr102" name="cf_tracking_firefox_esr102">
+        <option value="---"
+          id="v5604_cf_tracking_firefox_esr102" selected
+        >---
+        </option>
+  </select></td>
+        <td class="tracking-flag-status"><input type="hidden" id="cf_status_firefox_esr102-dirty">
+  <select id="cf_status_firefox_esr102" name="cf_status_firefox_esr102">
+        <option value="---"
+          id="v5609_cf_status_firefox_esr102" selected
+        >---
+        </option>
+  </select></td>
+      </tr>
+      <tr>
+        <td class="tracking-flag-name">firefox109</td>
+          <td class="tracking-flag-tracking"><input type="hidden" id="cf_tracking_firefox109-dirty">
+  <select id="cf_tracking_firefox109" name="cf_tracking_firefox109">
+        <option value="---"
+          id="v5839_cf_tracking_firefox109" selected
+        >---
+        </option>
+  </select></td>
+        <td class="tracking-flag-status"><input type="hidden" id="cf_status_firefox109-dirty">
+  <select id="cf_status_firefox109" name="cf_status_firefox109">
+        <option value="---"
+          id="v5844_cf_status_firefox109" selected
+        >---
+        </option>
+  </select></td>
+      </tr>
+      <tr>
+        <td class="tracking-flag-name">firefox110</td>
+          <td class="tracking-flag-tracking"><input type="hidden" id="cf_tracking_firefox110-dirty">
+  <select id="cf_tracking_firefox110" name="cf_tracking_firefox110">
+        <option value="---"
+          id="v5858_cf_tracking_firefox110" selected
+        >---
+        </option>
+  </select></td>
+        <td class="tracking-flag-status"><input type="hidden" id="cf_status_firefox110-dirty">
+  <select id="cf_status_firefox110" name="cf_status_firefox110">
+        <option value="---"
+          id="v5863_cf_status_firefox110" selected
+        >---
+        </option>
+  </select></td>
+      </tr>
+      <tr>
+        <td class="tracking-flag-name">firefox111</td>
+          <td class="tracking-flag-tracking"><input type="hidden" id="cf_tracking_firefox111-dirty">
+  <select id="cf_tracking_firefox111" name="cf_tracking_firefox111">
+        <option value="---"
+          id="v5888_cf_tracking_firefox111" selected
+        >---
+        </option>
+  </select></td>
+        <td class="tracking-flag-status"><input type="hidden" id="cf_status_firefox111-dirty">
+  <select id="cf_status_firefox111" name="cf_status_firefox111">
+        <option value="---"
+          id="v5893_cf_status_firefox111" selected
+        >---
+        </option>
+  </select></td>
+      </tr>
+  </table>
+</div>
+    </div>
+
+  
+</div>
+
+</div>
+  </div>
+</section>
+
+
+
+<section class="module" id="module-people"
+>
+    <header id="module-people-header" class="module-header">
+      <div class="module-latch"
+           data-label-expanded="Collapse People section"
+           data-label-collapsed="Expand People section">
+        <div class="module-spinner" role="button" tabindex="0"
+             aria-controls="module-people-content"
+             aria-expanded="false"
+             aria-labeledby="module-people-title"
+             aria-describedby="module-people-subtitle"></div>
+        <h2 class="module-title" id="module-people-title">People</h2>
+          <h3 class="module-subtitle" id="module-people-subtitle">
+            (Reporter: leonardo.maldonado, Assigned: bwilson)
+          </h3>
+      </div>
+    </header>
+  <div class="module-content" id="module-people-content" style="display:none"
+  ><div class="fields-lhs">
+
+    <div class="field edit-hide" id="field-assigned_to"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#assigned_to" id="assigned_to-help-link" class="help">Assignee:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-assigned_to"><div class="vcard vcard_661011" ><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=40" class="gravatar" width="20" height="20"> <a class="email " href="/user_profile?user_id=661011" > <span class="fna">bwilson</span></a>
+</div>
+        </span>
+    </div>
+
+  
+</div><div class="field edit-show" id="field-assigned_to" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#assigned_to" id="assigned_to-help-link" class="help">Assignee:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-assigned_to">
+      <div class="set-default-container" style="display:none">
+        <input type="checkbox" id="set-default-assignee" name="set_default_assignee" class="set-default"
+          value="1" data-for="assigned_to">
+        <label for="set-default-assignee">Reset Assignee to default</label>
+      </div>
+        </span>
+    </div>
+
+  
+</div>
+
+    <div class="field edit-show" id="field-bug_mentors" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#bug_mentor" id="bug_mentors-help-link" class="help">Mentors:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-bug_mentors">---
+        </span>
+    </div>
+
+  
+</div>
+
+    <div class="field edit-hide" id="field-qa_contact"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#qa_contact" id="qa_contact-help-link" class="help">QA Contact:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-qa_contact"><div class="vcard vcard_310524" ><img src="https://secure.gravatar.com/avatar/faede0fc9d625b79b41f567407337db6?d=mm&size=40" class="gravatar" width="20" height="20"> <a class="email " href="/user_profile?user_id=310524" > <span class="fna">kwilson</span></a>
+</div>
+        </span>
+    </div>
+
+  
+</div><div class="field edit-show" id="field-qa_contact" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#qa_contact" id="qa_contact-help-link" class="help">QA Contact:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-qa_contact">
+      <div class="set-default-container" style="display:none">
+        <input type="checkbox" id="set-default-qa-contact" name="set_default_qa_contact" class="set-default"
+          value="1" data-for="qa_contact">
+        <label for="set-default-qa-contact">Reset QA Contact to default</label>
+      </div>
+        </span>
+    </div>
+
+  
+</div>
+</div><div class="fields-rhs">
+
+    <div class="field" id="field-reporter"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#reporter" id="reporter-help-link" class="help">Reporter:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-reporter">
+            <div class="vcard vcard_684157" ><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=40" class="gravatar" width="20" height="20"> <a class="email " href="/user_profile?user_id=684157" > <span class="fna">leonardo.maldonado</span></a>
+</div>
+
+        </span>
+    </div>
+
+  
+</div>
+
+
+    <div class="field" id="field-triage_owner"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#triage_owner" id="triage_owner-help-link" class="help">Triage Owner:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-triage_owner">
+            <div class="vcard vcard_661011" ><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=40" class="gravatar" width="20" height="20"> <a class="email " href="/user_profile?user_id=661011" > <span class="fna">bwilson</span></a>
+</div>
+
+        </span>
+    </div>
+
+  
+</div>
+
+    
+
+    <div class="field"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#cc" id="-help-link" class="help">CC:
+        </a>
+    </div>
+
+
+  
+    <div class=" container">
+
+
+        <span aria-owns="cc-summary cc-latch">
+          <span role="button" tabindex="0" id="cc-summary" data-count="3">3 people
+          </span>
+        </span>
+
+
+        <div id="cc-list" style="display:none"></div>
+    </div>
+
+  
+</div>
+</div>
+  </div>
+</section>
+
+
+<section class="module" id="module-references"
+>
+    <header id="module-references-header" class="module-header">
+      <div class="module-latch"
+           data-label-expanded="Collapse References section"
+           data-label-collapsed="Expand References section">
+        <div class="module-spinner" role="button" tabindex="0"
+             aria-controls="module-references-content"
+             aria-expanded="false"
+             aria-labeledby="module-references-title"
+             aria-describedby="module-references-subtitle"></div>
+        <h2 class="module-title" id="module-references-title">References</h2>
+      </div>
+    </header>
+  <div class="module-content" id="module-references-content" style="display:none"
+  ><div class="fields-lhs">
+
+    <div class="field bug-list edit-show" id="field-dependson" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#dependson" id="dependson-help-link" class="help">Depends on:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-dependson">
+        ---
+        </span>
+    </div>
+
+  
+</div><div class="field bug-list edit-show" id="field-blocked" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#blocks" id="blocked-help-link" class="help">Blocks:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-blocked">
+        ---
+        </span>
+    </div>
+
+  
+</div>
+
+    <div class="field bug-list edit-show" id="field-regresses" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#regresses" id="regresses-help-link" class="help">Regressions:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-regresses">
+        ---
+        </span>
+    </div>
+
+  
+</div><div class="field bug-list edit-show" id="field-regressed_by" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#regressed_by" id="regressed_by-help-link" class="help">Regressed by:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-regressed_by">
+        ---
+        </span>
+    </div>
+
+  
+</div>
+
+    <div class="field bug-list"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#duplicates" id="-help-link" class="help">Duplicates:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+            <div class="bug-list">
+        <span class="bug-type-label iconic" title="task"
+              aria-label="task" data-type="task">
+          <span class="icon" aria-hidden="true"></span>
+        </span><a class="bz_bug_link
+          bz_status_RESOLVED bz_closed"
+   title="RESOLVED DUPLICATE - Add GSE SMIME Roots to Mozilla root store"
+   href="/show_bug.cgi?id=1721497">1721497</a>
+      </div>
+
+    </div>
+
+  
+</div>
+</div><div class="fields-rhs">
+
+    <div class="field edit-show" id="field-bug_file_loc" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#bug_file_loc" id="bug_file_loc-help-link" class="help">URL:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-bug_file_loc"><div class="link">
+    <a href="" target="_blank"
+      rel="noreferrer" title=""
+      class="bug-url" data-safe="0"></a>
+  </div>
+        </span>
+    </div>
+
+  
+</div>
+
+    <div class="field edit-show" id="field-see_also" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#see_also" id="see_also-help-link" class="help">See Also:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-see_also">
+        ---
+        </span>
+    </div>
+
+  
+</div>
+</div>
+  </div>
+</section>
+
+
+<section class="module" id="module-details"
+>
+    <header id="module-details-header" class="module-header">
+      <div class="module-latch"
+           data-label-expanded="Collapse Details section"
+           data-label-collapsed="Expand Details section">
+        <div class="module-spinner" role="button" tabindex="0"
+             aria-controls="module-details-content"
+             aria-expanded="false"
+             aria-labeledby="module-details-title"
+             aria-describedby="module-details-subtitle"></div>
+        <h2 class="module-title" id="module-details-title">Details</h2>
+          <h3 class="module-subtitle" id="module-details-subtitle">
+            (Whiteboard: [ca-verifying] BW 2021-12-01)
+          </h3>
+      </div>
+    </header>
+  <div class="module-content" id="module-details-content" style="display:none"
+  ><div class="fields-lhs">
+
+    <div class="field edit-show" id="field-alias" style="display:none"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/BugFields#alias" id="alias-help-link" class="help">Alias:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-alias">
+        ---
+        </span>
+    </div>
+
+  
+</div>
+
+    <div class="field edit-show" id="field-keywords" style="display:none"
+>
+    <div class="name">
+        <a href="/describekeywords.cgi" id="keywords-help-link" class="help">Keywords:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-keywords">---
+        </span>
+    </div>
+
+  
+</div>
+
+    <div class="field" id="field-status_whiteboard"
+>
+    <div class="name">
+        <a href="https://wiki.mozilla.org/BMO/UserGuide/Whiteboard" id="status_whiteboard-help-link" class="help">Whiteboard:
+        </a>
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-status_whiteboard">[ca-verifying] BW 2021-12-01
+        </span>
+    </div>
+
+  
+</div>
+
+    <div class="field edit-show" id="field-cf_cab_review" style="display:none"
+>
+    <div class="name">Change Request:
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-cf_cab_review">
+            ---
+
+        </span>
+    </div>
+
+  
+</div>
+
+    
+</div><div class="fields-rhs">
+
+    <div class="field edit-show" id="field-bug_flags" style="display:none"
+>
+    <div class="name">Bug Flags:
+    </div>
+
+
+  
+    <div class=" container">
+        <span id="field-value-bug_flags"><div id="bug-flags" class="flags">
+  <table class="layout-table">
+    <tbody class="edit-show" style="display:none"><tr>
+    <td class="flag-setter">
+    </td>
+
+    <td class="flag-name">
+      <label title="Is this bug/feature enabled in a release by a pref flag (see https://github.com/mozilla/bug-handling/blob/master/policy/feature-flags.md)?" for="flag_type-930">behind-pref</label>
+    </td>
+
+    <td class="flag-value">
+      <input type="hidden" id="flag_type-930-dirty">
+      <select id="flag_type-930" name="flag_type-930"
+        title="Is this bug/feature enabled in a release by a pref flag (see https://github.com/mozilla/bug-handling/blob/master/policy/feature-flags.md)?"
+        class="bug-flag">
+          <option value="X"></option>
+            <option value="+" >+</option>
+            <option value="-" >-</option>
+      </select>
+    </td>
+
+
+  </tr><tr>
+    <td class="flag-setter">
+    </td>
+
+    <td class="flag-name">
+      <label title="Flag is used to track security bug bounty nominations. Mail security(at)mozilla.org to nominate a bug." for="flag_type-803">sec-bounty</label>
+    </td>
+
+    <td class="flag-value">
+      <input type="hidden" id="flag_type-803-dirty">
+      <select id="flag_type-803" name="flag_type-803"
+        title="Flag is used to track security bug bounty nominations. Mail security(at)mozilla.org to nominate a bug."
+        class="bug-flag">
+          <option value="X"></option>
+            <option value="?" >?</option>
+      </select>
+    </td>
+
+
+  </tr><tr>
+    <td class="flag-setter">
+    </td>
+
+    <td class="flag-name">
+      <label title="Flag is used to track whether the bug report is eligible for inclusion in the Bug Bounty Hall of Fame." for="flag_type-913">sec-bounty-hof</label>
+    </td>
+
+    <td class="flag-value">
+      <input type="hidden" id="flag_type-913-dirty">
+      <select id="flag_type-913" name="flag_type-913"
+        title="Flag is used to track whether the bug report is eligible for inclusion in the Bug Bounty Hall of Fame."
+          disabled
+        class="bug-flag">
+          <option value="X"></option>
+      </select>
+    </td>
+
+
+  </tr><tr>
+    <td class="flag-setter">
+    </td>
+
+    <td class="flag-name">
+      <label title="Whether the bug has a testcase in the qa test suite or not. Set it to &quot;in-qa-testsuite?&quot; if the bug needs a testcase (only set this if the bug actually *needs* a testcase - not all bugs do, even layout bugs!), set it to &quot;in-qa-testsuite+&quot; if the bug has an appropriate testcase, and set it to &quot;in-qa-testsuite-&quot; if the bug doesn't need an explicit testcase (e.g. for code cleanup bugs). Only QA actively working on test cases in the component should use this keyword." for="flag_type-787">in-qa-testsuite</label>
+    </td>
+
+    <td class="flag-value">
+      <input type="hidden" id="flag_type-787-dirty">
+      <select id="flag_type-787" name="flag_type-787"
+        title="Whether the bug has a testcase in the qa test suite or not. Set it to &quot;in-qa-testsuite?&quot; if the bug needs a testcase (only set this if the bug actually *needs* a testcase - not all bugs do, even layout bugs!), set it to &quot;in-qa-testsuite+&quot; if the bug has an appropriate testcase, and set it to &quot;in-qa-testsuite-&quot; if the bug doesn't need an explicit testcase (e.g. for code cleanup bugs). Only QA actively working on test cases in the component should use this keyword."
+        class="bug-flag">
+          <option value="X"></option>
+            <option value="?" >?</option>
+            <option value="+" >+</option>
+            <option value="-" >-</option>
+      </select>
+    </td>
+
+      <td class="flag-requestee">
+        <div id="requestee_type-787-container" style="display:none"><input
+    name="requestee_type-787"
+    value="" class="requestee bz_autocomplete_user"  id="requestee_type-787" 
+  >
+        </div>
+      <td>
+
+  </tr><tr>
+    <td class="flag-setter">
+    </td>
+
+    <td class="flag-name">
+      <label title="Whether the bug has a testcase in the test suite or not. Set it to &quot;in-testsuite?&quot; if the bug needs a testcase (only set this if the bug actually *needs* a testcase - not all bugs do, even layout bugs!), set it to &quot;in-testsuite+&quot; if the bug has an appropriate testcase, and set it to &quot;in-testsuite-&quot; if the bug doesn't need an explicit testcase (e.g. for code cleanup bugs). Only QA actively working on test cases in the component should use this keyword." for="flag_type-37">in-testsuite</label>
+    </td>
+
+    <td class="flag-value">
+      <input type="hidden" id="flag_type-37-dirty">
+      <select id="flag_type-37" name="flag_type-37"
+        title="Whether the bug has a testcase in the test suite or not. Set it to &quot;in-testsuite?&quot; if the bug needs a testcase (only set this if the bug actually *needs* a testcase - not all bugs do, even layout bugs!), set it to &quot;in-testsuite+&quot; if the bug has an appropriate testcase, and set it to &quot;in-testsuite-&quot; if the bug doesn't need an explicit testcase (e.g. for code cleanup bugs). Only QA actively working on test cases in the component should use this keyword."
+        class="bug-flag">
+          <option value="X"></option>
+            <option value="?" >?</option>
+            <option value="+" >+</option>
+            <option value="-" >-</option>
+      </select>
+    </td>
+
+
+  </tr><tr>
+    <td class="flag-setter">
+    </td>
+
+    <td class="flag-name">
+      <label title="qe-verify: + ➜ request to verify the bug manually
+qe-verify: – ➜ the bug will not/can not be verified manually" for="flag_type-864">qe-verify</label>
+    </td>
+
+    <td class="flag-value">
+      <input type="hidden" id="flag_type-864-dirty">
+      <select id="flag_type-864" name="flag_type-864"
+        title="qe-verify: + ➜ request to verify the bug manually
+qe-verify: – ➜ the bug will not/can not be verified manually"
+          disabled
+        class="bug-flag">
+          <option value="X"></option>
+      </select>
+    </td>
+
+
+  </tr>
+    </tbody>
+  </table>
+</div>
+        </span>
+    </div>
+
+  
+</div>
+</div>
+
+  
+  </div>
+</section>
+
+
+<section class="module edit-show" style="display:none" id="module-crash-data"
+>
+    <header id="module-crash-data-header" class="module-header">
+      <div class="module-latch"
+           data-label-expanded="Collapse Crash Data section"
+           data-label-collapsed="Expand Crash Data section">
+        <div class="module-spinner" role="button" tabindex="0"
+             aria-controls="module-crash-data-content"
+             aria-expanded="false"
+             aria-labeledby="module-crash-data-title"
+             aria-describedby="module-crash-data-subtitle"></div>
+        <h2 class="module-title" id="module-crash-data-title">Crash Data</h2>
+      </div>
+    </header>
+  <div class="module-content" id="module-crash-data-content" style="display:none"
+  ><div class="field edit-show" id="field-cf_crash_signature" style="display:none"
+>
+    <div class="name">Signature:
+    </div>
+
+
+  
+    <div class="value">
+        <span id="field-value-cf_crash_signature">
+        </span>
+    </div>
+
+  
+</div>
+  </div>
+</section>
+
+
+<section class="module edit-show" style="display:none" id="module-security"
+>
+    <header id="module-security-header" class="module-header">
+      <div class="module-latch"
+           data-label-expanded="Collapse Security section"
+           data-label-collapsed="Expand Security section">
+        <div class="module-spinner" role="button" tabindex="0"
+             aria-controls="module-security-content"
+             aria-expanded="false"
+             aria-labeledby="module-security-title"
+             aria-describedby="module-security-subtitle"></div>
+        <h2 class="module-title" id="module-security-title">Security</h2>
+          <h3 class="module-subtitle" id="module-security-subtitle">
+            (public)
+          </h3>
+      </div>
+    </header>
+  <div class="module-content" id="module-security-content" style="display:none"
+  ><div class="groups edit-hide">
+    This bug is publicly visible.
+</div>
+
+<div class="groups edit-show" style="display:none">
+
+
+</div>
+  </div>
+</section>
+
+
+<section class="module edit-show" style="display:none" id="module-user-story" data-non-stick="1"
+>
+    <header id="module-user-story-header" class="module-header">
+      <div class="module-latch"
+           data-label-expanded="Collapse User Story section"
+           data-label-collapsed="Expand User Story section">
+        <div class="module-spinner" role="button" tabindex="0"
+             aria-controls="module-user-story-content"
+             aria-expanded="false"
+             aria-labeledby="module-user-story-title"
+             aria-describedby="module-user-story-subtitle"></div>
+        <h2 class="module-title" id="module-user-story-title">User Story</h2>
+      </div>
+    </header>
+  <div class="module-content" id="module-user-story-content" style="display:none"
+  >
+    <pre id="user-story"></pre>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="module" id="module-attachments"
+>
+    <header id="module-attachments-header" class="module-header">
+      <div class="module-latch"
+           data-label-expanded="Collapse Attachments section"
+           data-label-collapsed="Expand Attachments section">
+        <div class="module-spinner" role="button" tabindex="0"
+             aria-controls="module-attachments-content"
+             aria-expanded="true"
+             aria-labeledby="module-attachments-title"
+             aria-describedby="module-attachments-subtitle"></div>
+        <h2 class="module-title" id="module-attachments-title">Attachments</h2>
+          <h3 class="module-subtitle" id="module-attachments-subtitle">
+            (8 files, 1 obsolete file)
+          </h3>
+      </div>
+    </header>
+  <div class="module-content" id="module-attachments-content"
+  ><table role="table" class="layout-table" id="attachments">
+    <tr class="
+    " >
+      <td class="attach-desc-td">
+        <div class="attach-desc">
+            <a href="/attachment.cgi?id=9218396">Root_ECD_GSE_RSA.pem</a>
+        </div>
+        <div>
+            <a href="#c2" class="attach-time activity-ref"><span class="rel-time" title="2021-04-26 10:16 PDT" data-time="1619457412">2 years ago</span></a>
+          <span class="attach-author"><div class="vcard vcard_684157" ><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div></span>
+        </div>
+        <div class="attach-info">2.12 KB,
+          application/octet-stream        </div>
+      </td>
+      <td>
+      </td>
+      <td class="attach-actions">
+        <a href="/attachment.cgi?id=9218396&amp;action=edit">Details</a>
+    </tr>
+    <tr class=" attach-obsolete
+    " style="display:none">
+      <td class="attach-desc-td">
+        <div class="attach-desc">
+            <a href="/attachment.cgi?id=9218397">Root_ECD_GSE_ECDSA.pem</a>
+        </div>
+        <div>
+            <a href="#c3" class="attach-time activity-ref"><span class="rel-time" title="2021-04-26 10:17 PDT" data-time="1619457438">2 years ago</span></a>
+          <span class="attach-author"><div class="vcard vcard_684157" ><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div></span>
+        </div>
+        <div class="attach-info">1.48 KB,
+          application/octet-stream        </div>
+      </td>
+      <td>
+      </td>
+      <td class="attach-actions">
+        <a href="/attachment.cgi?id=9218397&amp;action=edit">Details</a>
+    </tr>
+    <tr class="
+    " >
+      <td class="attach-desc-td">
+        <div class="attach-desc">
+            <a href="/attachment.cgi?id=9242139"
+              title="CCADB Case"
+              class="lightbox">
+              <img src="/extensions/BugModal/web/image.png" width="16" height="16">CCADB Case
+            </a>
+        </div>
+        <div>
+            <a href="#c7" class="attach-time activity-ref"><span class="rel-time" title="2021-09-20 13:11 PDT" data-time="1632168702">1 year ago</span></a>
+          <span class="attach-author"><div class="vcard vcard_684157" ><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div></span>
+        </div>
+        <div class="attach-info">47.32 KB,
+          image/png        </div>
+      </td>
+      <td>
+      </td>
+      <td class="attach-actions">
+        <a href="/attachment.cgi?id=9242139&amp;action=edit">Details</a>
+    </tr>
+    <tr class=" attach-patch
+    " >
+      <td class="attach-desc-td">
+        <div class="attach-desc">
+            <a href="/attachment.cgi?id=9242157">Root_ECD_GSE_ECDSA.pem</a>
+        </div>
+        <div>
+            <a href="#c12" class="attach-time activity-ref"><span class="rel-time" title="2021-09-20 15:12 PDT" data-time="1632175924">1 year ago</span></a>
+          <span class="attach-author"><div class="vcard vcard_684157" ><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div></span>
+        </div>
+        <div class="attach-info">1.25 KB,
+          patch        </div>
+      </td>
+      <td>
+      </td>
+      <td class="attach-actions">
+        <a href="/attachment.cgi?id=9242157&amp;action=edit">Details</a>
+          | <a href="/attachment.cgi?id=9242157&amp;action=diff">Diff</a>&#x0020; |
+  <a href="/page.cgi?id=splinter.html&ignore=&bug=1707136&attachment=9242157">Splinter Review</a>
+    </tr>
+    <tr class="
+    " >
+      <td class="attach-desc-td">
+        <div class="attach-desc">
+            <a href="/attachment.cgi?id=9243339">2021 - GSE - Reporte de Atestiguamiento Independiente WT2021.pdf</a>
+        </div>
+        <div>
+            <a href="#c13" class="attach-time activity-ref"><span class="rel-time" title="2021-09-28 16:30 PDT" data-time="1632871838">1 year ago</span></a>
+          <span class="attach-author"><div class="vcard vcard_661011" ><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div></span>
+        </div>
+        <div class="attach-info">693.92 KB,
+          application/pdf        </div>
+      </td>
+      <td>
+      </td>
+      <td class="attach-actions">
+        <a href="/attachment.cgi?id=9243339&amp;action=edit">Details</a>
+    </tr>
+    <tr class="
+    " >
+      <td class="attach-desc-td">
+        <div class="attach-desc">
+            <a href="/attachment.cgi?id=9246019">GratefulRSA.cer</a>
+        </div>
+        <div>
+            <a href="#c18" class="attach-time activity-ref"><span class="rel-time" title="2021-10-14 14:26 PDT" data-time="1634246790">1 year ago</span></a>
+          <span class="attach-author"><div class="vcard vcard_684157" ><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div></span>
+        </div>
+        <div class="attach-info">2.86 KB,
+          application/x-x509-ca-cert        </div>
+      </td>
+      <td>
+      </td>
+      <td class="attach-actions">
+        <a href="/attachment.cgi?id=9246019&amp;action=edit">Details</a>
+    </tr>
+    <tr class="
+    " >
+      <td class="attach-desc-td">
+        <div class="attach-desc">
+            <a href="/attachment.cgi?id=9246020">LeonardoECDSA.cer</a>
+        </div>
+        <div>
+            <a href="#c19" class="attach-time activity-ref"><span class="rel-time" title="2021-10-14 14:27 PDT" data-time="1634246828">1 year ago</span></a>
+          <span class="attach-author"><div class="vcard vcard_684157" ><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div></span>
+        </div>
+        <div class="attach-info">1.95 KB,
+          application/x-x509-ca-cert        </div>
+      </td>
+      <td>
+      </td>
+      <td class="attach-actions">
+        <a href="/attachment.cgi?id=9246020&amp;action=edit">Details</a>
+    </tr>
+    <tr class="
+    " >
+      <td class="attach-desc-td">
+        <div class="attach-desc">
+            <a href="/attachment.cgi?id=9309940">Gestión de Seguridad Electrónica – GSE SA - Audit Report and Management Assertion 2022.pdf</a>
+        </div>
+        <div>
+            <a href="#c26" class="attach-time activity-ref"><span class="rel-time" title="2022-12-27 16:55 PST" data-time="1672188937">1 month ago</span></a>
+          <span class="attach-author"><div class="vcard vcard_661011" ><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div></span>
+        </div>
+        <div class="attach-info">349.69 KB,
+          application/pdf        </div>
+      </td>
+      <td>
+      </td>
+      <td class="attach-actions">
+        <a href="/attachment.cgi?id=9309940&amp;action=edit">Details</a>
+    </tr>
+    <tr class="
+    " >
+      <td class="attach-desc-td">
+        <div class="attach-desc">
+            <a href="/attachment.cgi?id=9312505">JUSTIFICATION CASE n° 814.docx</a>
+        </div>
+        <div>
+            <a href="#c28" class="attach-time activity-ref"><span class="rel-time" title="2023-01-16 14:29 PST" data-time="1673908175">19 days ago</span></a>
+          <span class="attach-author"><div class="vcard vcard_684157" ><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div></span>
+        </div>
+        <div class="attach-info">26.48 KB,
+          application/pdf        </div>
+      </td>
+      <td>
+      </td>
+      <td class="attach-actions">
+        <a href="/attachment.cgi?id=9312505&amp;action=edit">Details</a>
+    </tr>
+</table>
+
+<footer id="attachments-footer">
+  <div id="attachments-actions">
+      <button type="button" id="attachments-obsolete-btn" class="secondary">Show Obsolete</button>
+  </div>
+  
+</footer>
+  </div>
+</section>
+
+
+
+<script nonce="wvrfsLdeCoyaJu9RGGx1GgTFMWMuDNWhHndi4x44Hcvdxjx5">
+  init_module_visibility();
+</script>
+
+
+
+<meta name="firefox-versions" content="{&quot;FIREFOX_AURORA&quot;:&quot;&quot;,&quot;FIREFOX_DEVEDITION&quot;:&quot;110.0b9&quot;,&quot;FIREFOX_ESR&quot;:&quot;102.7.0esr&quot;,&quot;FIREFOX_ESR_NEXT&quot;:&quot;&quot;,&quot;FIREFOX_NIGHTLY&quot;:&quot;111.0a1&quot;,&quot;FIREFOX_PINEBUILD&quot;:&quot;&quot;,&quot;LAST_MERGE_DATE&quot;:&quot;2023-01-16&quot;,&quot;LAST_RELEASE_DATE&quot;:&quot;2023-01-17&quot;,&quot;LAST_SOFTFREEZE_DATE&quot;:&quot;2023-01-12&quot;,&quot;LAST_STRINGFREEZE_DATE&quot;:&quot;2023-01-13&quot;,&quot;LATEST_FIREFOX_DEVEL_VERSION&quot;:&quot;110.0b9&quot;,&quot;LATEST_FIREFOX_OLDER_VERSION&quot;:&quot;3.6.28&quot;,&quot;LATEST_FIREFOX_RELEASED_DEVEL_VERSION&quot;:&quot;110.0b9&quot;,&quot;LATEST_FIREFOX_VERSION&quot;:&quot;109.0.1&quot;,&quot;NEXT_MERGE_DATE&quot;:&quot;2023-02-13&quot;,&quot;NEXT_RELEASE_DATE&quot;:&quot;2023-02-14&quot;,&quot;NEXT_SOFTFREEZE_DATE&quot;:&quot;2023-02-09&quot;,&quot;NEXT_STRINGFREEZE_DATE&quot;:&quot;2023-02-10&quot;}">
+
+
+<div id="comment-actions">
+    <button type="button" id="bottom-btn" class="secondary" aria-label="Go to Page Bottom">Bottom &darr;</button>
+  <div class="dropdown">
+    <button type="button" id="comment-tags-btn" aria-haspopup="true" aria-label="Tags"
+      aria-expanded="false" aria-controls="comment-tags-menu" class="dropdown-button minor">Tags &#9662;</button>
+    <ul id="comment-tags-menu" role="menu" tabindex="0" class="dropdown-content left" style="display:none">
+      <li role="presentation">
+        <a role="menuitem" tabindex="-1" data-comment-tag="">Reset</a>
+      </li>
+    </ul>
+  </div>
+  <div class="dropdown">
+    <button type="button" id="view-menu-btn" aria-haspopup="true" aria-label="Timeline"
+      aria-expanded="false" aria-controls="view-menu" class="dropdown-button minor">Timeline &#9662;</button>
+    <ul id="view-menu" role="menu" tabindex="0" class="dropdown-content left" style="display:none">
+      <li role="presentation">
+        <a id="view-reset" role="menuitem" tabindex="-1">Reset</a>
+      </li>
+      <li role="separator"></li>
+      <li role="presentation">
+        <a id="view-collapse-all" role="menuitem" tabindex="-1">Collapse All</a>
+      </li>
+      <li role="presentation">
+        <a id="view-expand-all" role="menuitem" tabindex="-1">Expand All</a>
+      </li>
+      <li role="presentation">
+        <a id="view-comments-only" role="menuitem" tabindex="-1">Comments Only</a>
+      </li>
+    </ul>
+   </div>
+</div>
+<div class="change-set" id="c0"><div class="comment" data-id="15376151" data-no="0"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-0" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" ><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" ><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-0"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-0" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c0">Description</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-04-22 17:01 PDT" data-time="1619136073">2 years ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-0">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-0" data-comment-id="15376151" data-ismarkdown="true" ><p>User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36 Edg/90.0.818.42</p>
+</div></div><div class="change-set" id="a288_684157"><div class="change" id="aa288_684157">
+    <table class="layout-table change-head reporter" role="presentation">
+      <tr>
+        <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a288_684157"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+        </td>
+        <td class="change-author"><div class="vcard vcard_684157" id="a288_684157"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+            <span class="user-role">Reporter</span>
+        </td>
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="as-a288_684157"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+      <tr id="ar-a288_684157">
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#a288_684157">Updated</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-04-22 17:06 PDT" data-time="1619136361">2 years ago</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div><div class="activity"><div class="change">Flags: needinfo?(kwilson)</div></div></div><div class="change-set" id="a157824_661011"><div class="change" id="aa157824_661011">
+    <table class="layout-table change-head assignee" role="presentation">
+      <tr>
+        <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a157824_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+        </td>
+        <td class="change-author"><div class="vcard vcard_661011" id="a157824_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+            <span class="user-role">Assignee</span>
+        </td>
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="as-a157824_661011"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+      <tr id="ar-a157824_661011">
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#a157824_661011">Updated</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-04-24 12:51 PDT" data-time="1619293897">2 years ago</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div><div class="activity"><div class="change">Assignee: kwilson &rarr; bwilson</div><div class="change">Status: UNCONFIRMED &rarr; ASSIGNED</div><div class="change">Ever confirmed: true</div><div class="change">Whiteboard: [ca-initial]</div></div></div><div class="change-set" id="a318201_661011"><div class="change" id="aa318201_661011">
+    <table class="layout-table change-head assignee" role="presentation">
+      <tr>
+        <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a318201_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+        </td>
+        <td class="change-author"><div class="vcard vcard_661011" id="a318201_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+            <span class="user-role">Assignee</span>
+        </td>
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="as-a318201_661011"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+      <tr id="ar-a318201_661011">
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#a318201_661011">Updated</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-04-26 09:24 PDT" data-time="1619454274">2 years ago</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div><div class="activity"><div class="change">Type: enhancement &rarr; task</div></div></div><div class="change-set" id="c1"><div class="comment" data-id="15380845" data-no="1"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-1" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a318201_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a318201_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-1"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-1" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c1">Comment 1</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-04-26 10:14 PDT" data-time="1619457281">2 years ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-1">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-1" data-comment-id="15380845" data-ismarkdown="true" ><p>Contact information:<br>
+Leonardo Maldonado<br>
+Product Manager Specialist<br>
+<a href="mailto:leonardo.maldonado@gse.com.co" rel="nofollow">leonardo.maldonado@gse.com.co</a><br>
++573212527921</p>
+<p>Alejandro Calderon<br>
+Commercial Director<br>
+<a href="mailto:alejandro.calderon@gse.com.co" rel="nofollow">alejandro.calderon@gse.com.co</a><br>
++57316 4128907</p>
+<p>Company name and address<br>
+Gestion de Seguridad Electronica S.A - GSE S.A - Calle 73 # 7 – 31 3rd. floor Tower B - Bogota – Colombia</p>
+<p>Backup/Alternate contact name and address, preferably a durable contact that can survive employee turnover (eg, &quot;legal@companynameDOTcom&quot;)<br>
+<a href="mailto:info@gse.com.co" rel="nofollow">info@gse.com.co</a></p>
+<p>Company web page address (URL)<br>
+<a href="https://gse.com.co" rel="nofollow">https://gse.com.co</a></p>
+<p>Link to a Certificate Practice Statement<br>
+<a href="https://gse.com.co/marco-regulatorio/" rel="nofollow">https://gse.com.co/marco-regulatorio/</a> (In spanish version, attached you can find english translated version)</p>
+<p>List of all current third-party audits your CA practice has passed<br>
+WebTrust: <a href="https://www.cpacanada.ca/webtrustseal?sealid=10430" rel="nofollow">https://www.cpacanada.ca/webtrustseal?sealid=10430</a><br>
+ONAC: <a href="https://gse.com.co/wp-content/uploads/2020/10/Alcance-16-ECD-0012020-002-ECD-AGL.pdf" rel="nofollow">https://gse.com.co/wp-content/uploads/2020/10/Alcance-16-ECD-0012020-002-ECD-AGL.pdf</a></p>
+<p>Certificate revocation server URL (CRL and OCSP)</p>
+<ul>
+<li>List of Revoked Root Certificates ECD GSE (CRL)<br>
+<a href="https://crl2.gse.com.co/CA_ROOT.crl" rel="nofollow">https://crl2.gse.com.co/CA_ROOT.crl</a></li>
+<li>List of ECD GSE Intermediate Revoked Certificates (CRL)<br>
+<a href="https://crl2.gse.com.co/CA_SUB01.crl" rel="nofollow">https://crl2.gse.com.co/CA_SUB01.crl</a></li>
+<li>List of Revoked Certificates Intermediate end entity certificates<br>
+(CRL)<br>
+<a href="https://crl2.gse.com.co/CA_SUB01.crl" rel="nofollow">https://crl2.gse.com.co/CA_SUB01.crl</a></li>
+<li>Online validation of Digital Certificates<br>
+<a href="https://ocsp2.gse.com.co" rel="nofollow">https://ocsp2.gse.com.co</a></li>
+</ul>
+<p>Explanation of how your organization reports revocation status for expired code signing certificates. Explanation should include if expired certificates are pruned from CRLs/OCSPResponses as soon as they expire. If not, how long is revocation information maintained for expired certificates. Note: if not indefinite, we may decline new participants that do not retain expired information for an extended period of time.<br>
+We have not issued code signing certificates yet, we can review your suggestions when we start to issue it.</p>
+<p>Number of roots you would like to submit<br>
+Two (Root_ECD_GSE_RSA.pem and Root_ECD_GSE_ECDSA.pem)</p>
+<p>Answers to the following questions<br>
+-What business purpose and applications (ex: code signing, SSL Client SSL Server, S/MIME, etc) will certificates issued from these root certificates serve?</p>
+<p>We only issue certificates for S/MIME for digital signature and encryption.</p>
+<p>-Who will obtain certificates from your Certificate Authority and what are the processes used for doing so?</p>
+<p>The certificates are obtained by any individual or business in Colombia, accordingly with local law (Law 527 of 1999, Decree 333 of 2014 and Specific Criteria for Accreditation), and with CPS attached to this message for use in digital signature (including electronic invoices, contracts and others).</p>
+<p>§  Will you issue certificates to individuals, organizations, or both?</p>
+<p>For both of them, individuals and organizations.</p>
+<p>§  Do you only issue certificates to users from a specific region, language, demographic or other niche demographic?</p>
+<p>Yes, we are issuing certificates for Colombia and planning to start business in near countries, like Peru and Ecuador.</p>
+<p>§  How do you market your organization, and more specifically, how do users request a certificate from you (please be specific for each of individuals and organizations if different)?</p>
+<p>Individuals and organizations request certificates accordingly from the CPS, depending on the use and the conditions that need to be included in the certificate, all the documents are sended by users using our Webpage, and the information is validated by our Registration Authority Agents. Depending on the document&#39;s review and the payment verification, the certificate is recommended to be issued by the Certification Authority. All the verifications are reviewed individually as requested by CPS and local law, audited periodically by National Organism of Accreditation of Colombia - ONAC</p>
+<p>-What is the validation process for someone requesting a certificate issued from these roots?</p>
+<p>The process consists in verify each document sended by requestor, against third party databases recognized as official or trustable, also the RA officer review that the information is absolutely readable, and is not apparently manipulated in any way. Also the payment is validated, but is not a compromise to get approved in the certificate request. In case of doubt or in case that the information is not validated accordingly the CPS and local law, the certificate request can be denided.</p>
+<p>A copy of the root(s) to be evaluated can be included in the e-mail for initial examination.<br>
+-----BEGIN CERTIFICATE-----<br>
+MIIF+jCCA+KgAwIBAgIKFqEmCSFtTI9g4DANBgkqhkiG9w0BAQsFADBmMR4wHAYJ<br>
+KoZIhvcNAQkBFg9pbmZvQGdzZS5jb20uY28xGzAZBgNVBAMTEkF1dG9yaWRhZCBS<br>
+YWl6IEdTRTEMMAoGA1UECxMDUEtJMQwwCgYDVQQKEwNHU0UxCzAJBgNVBAYTAkNP<br>
+MCAXDTIwMDExNTE1MzkxNVoYDzIwNTAwMTA3MTUzOTE1WjBmMR4wHAYJKoZIhvcN<br>
+AQkBFg9pbmZvQGdzZS5jb20uY28xGzAZBgNVBAMTEkF1dG9yaWRhZCBSYWl6IEdT<br>
+RTEMMAoGA1UECxMDUEtJMQwwCgYDVQQKEwNHU0UxCzAJBgNVBAYTAkNPMIICIjAN<br>
+BgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAtrni1ixVBsRYAhbGM72JD+ZFFmKE<br>
+J101d5PcoiIQwUOvx05RspB05B9WZTtyZIW3jvpCBFNeu9/J9vmWoSWv2ye4/Mqm<br>
+4Zo+lZVsh+PjKi75LqjHWlP/fs7QFSADWT31Hbd1WZiI5hfEqpUmvTviFSIx4JfO<br>
+c1foLlpwgOfdn9gXE90gqE6CsvCvsINWAq5Qf7NX4MDbHZOcHcBuyZwxoP6yKUxx<br>
+aKKNlIO05mtgd5HJ7yA6R1rig8uDZklCX4bxLOi0rbup/fLUZzfDzu8Z9wMTddH9<br>
+rq/UtAFS8ztw5Mgwa8aerj+s5T6x0bym8GTKRjXUgmPWMjLXwivQVHWqIl1eswU+<br>
+WN9lQD6CsGVr3VuTT3o2IsnGBJuHVl7V4LcHuq8RgTjeeS+cOfqUIMnl6T8CWrhe<br>
+GRIdXCk5v2+5bUzX67C/A1EUm2MriUvm/LKcLWca8NgoIT78tfmihztB10CSU5n0<br>
+5SeX3PgvpE1eTrXJQOumGY3reFACBt1q0ZrLFvkdDXZ68OCkvsodXelA+buYZHKq<br>
+F9sySVk+8TuX8ewg0puc8MGRKlONLi/JZSbx1RLGeFBSu8mfMegdzP+WVO3Fck7t<br>
+3qHyAGDBa3iw/RFOM5zSsuh1Gk+N+IEFtyMz+yF2+dzc8q7xSul0/cX19L4voGli<br>
+gxrDLwxR3DhOChUCAwEAAaOBpzCBpDAPBgNVHRMBAf8EBTADAQH/MB8GA1UdIwQY<br>
+MBaAFM5vZMt2pOAs1OAlEi/FrM01ropEMEEGCCsGAQUFBwEBBDUwMzAxBggrBgEF<br>
+BQcwAoYlaHR0cHM6Ly9jZXJ0czIuZ3NlLmNvbS5jby9DQV9ST09ULmNydDAdBgNV<br>
+HQ4EFgQUzm9ky3ak4CzU4CUSL8WszTWuikQwDgYDVR0PAQH/BAQDAgEGMA0GCSqG<br>
+SIb3DQEBCwUAA4ICAQCcZzjQBxrXP6zg2mGs2tXsWwGrJAN3x9AS3WUNibnLh7Sv<br>
+qpwF+b+9uJ+xbTMUHrdd3j/ZMfH5d85d9luTp+BM7pcai0CW0lGkEGu0vGSLBjLC<br>
+GxtaO0HUu56CCS9EOqAWAn6SSqnmuddkM5MKc1ASARd6+ZziRCbG6sP7QUKTr5tw<br>
+96toDx1BnOtEazHdULSHd8kjZ1LGRlI+ha+wTst8tXJ4Oz/e6Q9cnDSybvg8U4o1<br>
+Y0SU1EU7jA2a4ZsLB4G/0FyViCTOl5pH05UsMWghBFD21CYElKGQStEV1N0o2Hbk<br>
+VT4VZbFL7Z98b+f76akdm9tP4fCOA9Brq3eBvUooHKSe7v+7UXXJ5GDDX9SsstQT<br>
+oLPgMr15nAjnQ+6dK1yn8Vtxz0ffYpJH9IsKLeDwv4x8jXip27MiC2WTw5F58ieY<br>
+ZUg3H8HDtW6v43HhvlTiekzsQxCPWpwEbZbKa+nxr7/lj0tbHGh0Bu9jRW/pThOa<br>
+ytmTEJoNnpnbncSPRwbm1AoziZEHolxEj/8GmigseOCbHhtUv1mAhHXZMvhP/Ye5<br>
+4ZaSGICj38W91w54bwyuKADAuCus/VlBbVeMB/QhHuqo3JncnsQ5GE+sJVR6QX5Q<br>
+zS+ogWI0WifRuyvkNgdkpRsNGfQjWkVFA9qJWdCHuvu7na1s8Zks/78rLjFkYA==<br>
+-----END CERTIFICATE-----</p>
+<p>-----BEGIN CERTIFICATE-----<br>
+MIIEIjCCA6mgAwIBAgIKVYZzU+V9eI6wOzAKBggqhkjOPQQDAzCB7DEXMBUGA1UE<br>
+CRMOd3d3LmdzZS5jb20uY28xHjAcBgkqhkiG9w0BCQEWD2luZm9AZ3NlLmNvbS5j<br>
+bzEXMBUGA1UEAxMOR1NFIEVDRFNBIFJBSVoxEjAQBgNVBAUTCTkwMDIwNDI3ODEX<br>
+MBUGA1UECxMOR1NFIENBIFJBSVogUjIxLTArBgNVBAoTJEdFU1RJT04gREUgU0VH<br>
+VVJJREFEIEVMRUNUUk9OSUNBIFMuQTEUMBIGA1UEBxMLQm9nb3RhIEQuQy4xGTAX<br>
+BgNVBAgTEERpc3RyaXRvIENhcGl0YWwxCzAJBgNVBAYTAkNPMB4XDTIxMDQwNzE0<br>
+NTUyMFoXDTMxMDQwNTE0NTUyMFowgfYxFzAVBgNVBAkTDnd3dy5nc2UuY29tLmNv<br>
+MR4wHAYJKoZIhvcNAQkBFg9pbmZvQGdzZS5jb20uY28xHjAcBgNVBAMTFUdTRSBF<br>
+Q0RTQSBTVUJPUkRJTkFEQTESMBAGA1UEBRMJOTAwMjA0Mjc4MRowGAYDVQQLExFH<br>
+U0UgRUNEU0EgUjIgU1VCMTEtMCsGA1UEChMkR0VTVElPTiBERSBTRUdVUklEQUQg<br>
+RUxFQ1RST05JQ0EgUy5BMRQwEgYDVQQHEwtCb2dvdGEgRC5DLjEZMBcGA1UECBMQ<br>
+RGlzdHJpdG8gQ2FwaXRhbDELMAkGA1UEBhMCQ08wdjAQBgcqhkjOPQIBBgUrgQQA<br>
+IgNiAAT/HSIZNg2FwQ2azdOwHeq7KpD7TyWw4ody5vywqedYGMlFHmAw/NMUwDa3<br>
+uNV/vUHDHNPrbJ/2qn2gV3k9Wzz99baoy5Rdph4W+XxZCS/89sC55cIwoKCbs7tC<br>
+QHpu7d6jggEIMIIBBDAPBgNVHRMBAf8EBTADAQH/MB8GA1UdIwQYMBaAFIdAToWZ<br>
+qCdXkOQPTgv9OkShAVVQMGkGCCsGAQUFBwEBBF0wWzAzBggrBgEFBQcwAoYnaHR0<br>
+cHM6Ly9jZXJ0czIuZ3NlLmNvbS5jby9DQV9FQ1JPT1QuY3J0MCQGCCsGAQUFBzAB<br>
+hhhodHRwczovL29jc3AyLmdzZS5jb20uY28wNgYDVR0fBC8wLTAroCmgJ4YlaHR0<br>
+cHM6Ly9jcmwyLmdzZS5jb20uY28vQ0FfRUNST09ULmNybDAdBgNVHQ4EFgQU9DNR<br>
+qBzfBmLl3ujvYXkDT5j2uwkwDgYDVR0PAQH/BAQDAgGGMAoGCCqGSM49BAMDA2cA<br>
+MGQCMDc8FHPMY36oP9Cswdn1LV2PhdeGeC0t5QGfUKFsBSKkXwLPDC4BVVdphAqX<br>
+J0sT0gIwMUqSOgZbd5pA8lKW9bJA7x4FB/UdPCecOicAOZBbCBZr+KHp/FQCFbSk<br>
+f/1877ll<br>
+-----END CERTIFICATE-----</p>
+</div><div class="activity"><div class="change">Flags: needinfo?(bwilson)</div></div></div><div class="change-set" id="c2"><div class="comment" data-id="15380851" data-no="2"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-2" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a318201_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a318201_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-2"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-2" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c2">Comment 2</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-04-26 10:16 PDT" data-time="1619457412">2 years ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-2">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div id="att-9218396"
+         class="attachment"
+         data-id="9218396" itemscope itemtype="http://schema.org/MediaObject">
+      <meta itemprop="name" content="Root_ECD_GSE_RSA.pem">
+      <meta itemprop="contentSize" content="2168">
+      <meta itemprop="encodingFormat" content="application/octet-stream">
+      <div class="label">
+        Attached file
+          <a class="link" href="attachment.cgi?id=9218396" itemprop="contentUrl">
+        <span id="att-9218396-description" itemprop="description">Root_ECD_GSE_RSA.pem</span></a>
+        — <a href="attachment.cgi?id=9218396&amp;action=edit" itemprop="url">Details</a>
+      </div>
+    </div>
+
+  <div
+      class="comment-text markdown-body empty"
+      id="ct-2" data-comment-id="15380851" data-ismarkdown="true" ></div><div class="activity"><div class="change">Flags: <span class="activity-deleted">needinfo?(bwilson)</span></div></div></div><div class="change-set" id="c3"><div class="comment" data-id="15380852" data-no="3"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-3" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a318201_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a318201_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-3"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-3" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c3">Comment 3</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-04-26 10:17 PDT" data-time="1619457438">2 years ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-3">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div id="att-9218397"
+         class="attachment obsolete"
+         data-id="9218397" itemscope itemtype="http://schema.org/MediaObject">
+      <meta itemprop="name" content="Root_ECD_GSE_ECDSA.pem">
+      <meta itemprop="contentSize" content="1518">
+      <meta itemprop="encodingFormat" content="application/octet-stream">
+      <div class="label">
+        Attached file
+          <a class="link" href="attachment.cgi?id=9218397" itemprop="contentUrl">
+        <span id="att-9218397-description" itemprop="description">Root_ECD_GSE_ECDSA.pem</span></a> (obsolete)
+        — <a href="attachment.cgi?id=9218397&amp;action=edit" itemprop="url">Details</a>
+      </div>
+    </div>
+
+  <div
+      class="comment-text markdown-body empty"
+      id="ct-3" data-comment-id="15380852" data-ismarkdown="true" ></div><div class="activity"><div class="change">Flags: needinfo?(bwilson)</div></div></div><div class="change-set" id="a493761_310524"><div class="change" id="aa493761_310524">
+    <table class="layout-table change-head " role="presentation">
+      <tr>
+        <td rowspan="2" class="change-gravatar"><div class="vcard vcard_310524" id="a493761_310524"><img src="https://secure.gravatar.com/avatar/faede0fc9d625b79b41f567407337db6?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+        </td>
+        <td class="change-author"><div class="vcard vcard_310524" id="a493761_310524"><a class="email " href="/user_profile?user_id=310524" > <span class="fna">Kathleen Wilson</span></a>
+</div>
+        </td>
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="as-a493761_310524"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+      <tr id="ar-a493761_310524">
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#a493761_310524">Updated</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-04-28 10:10 PDT" data-time="1619629834">2 years ago</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div><div class="activity"><div class="change">Flags: <span class="activity-deleted">needinfo?(kwilson)</span></div></div></div><div class="change-set" id="a1801293_661011"><div class="change" id="aa1801293_661011">
+    <table class="layout-table change-head assignee" role="presentation">
+      <tr>
+        <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a1801293_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+        </td>
+        <td class="change-author"><div class="vcard vcard_661011" id="a1801293_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+            <span class="user-role">Assignee</span>
+        </td>
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="as-a1801293_661011"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+      <tr id="ar-a1801293_661011">
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#a1801293_661011">Updated</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-05-13 13:22 PDT" data-time="1620937366">2 years ago</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div><div class="activity"><div class="change">Flags: <span class="activity-deleted">needinfo?(bwilson)</span></div><div class="change">Priority: -- &rarr; P3</div></div></div><div class="change-set" id="c4"><div class="comment" data-id="15578168" data-no="4"
+       data-tags="">
+    
+    <table class="layout-table change-head assignee" id="ch-4" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a1801293_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_661011" id="a1801293_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+              <span class="user-role">Assignee</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-4"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-4" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c4">Comment 4</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-09-20 12:51 PDT" data-time="1632167476">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-4">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-4" data-comment-id="15578168" data-ismarkdown="true" ><p>Please create a root inclusion case in the CCADB:<br>
+<a href="https://wiki.mozilla.org/CA/Information_Checklist#Create_a_Root_Inclusion_Case" rel="nofollow">https://wiki.mozilla.org/CA/Information_Checklist#Create_a_Root_Inclusion_Case</a><br>
+<a href="https://ccadb-public.secure.force.com/ccadb/AccessRequestForm" rel="nofollow">https://ccadb-public.secure.force.com/ccadb/AccessRequestForm</a><br>
+Let me know if you have any questions.</p>
+</div></div><div class="change-set" id="a13031423_661011"><div class="change" id="aa13031423_661011">
+    <table class="layout-table change-head assignee" role="presentation">
+      <tr>
+        <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+        </td>
+        <td class="change-author"><div class="vcard vcard_661011" id="a13031423_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+            <span class="user-role">Assignee</span>
+        </td>
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="as-a13031423_661011"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+      <tr id="ar-a13031423_661011">
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#a13031423_661011">Updated</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-09-20 12:51 PDT" data-time="1632167496">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div><div class="activity"><div class="change">Flags: needinfo?(leonardo.maldonado)</div></div></div><div class="change-set" id="c5"><div class="comment" data-id="15578187" data-no="5"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-5" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a13031423_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-5"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-5" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c5">Comment 5</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-09-20 13:08 PDT" data-time="1632168481">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-5">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-5" data-comment-id="15578187" data-ismarkdown="true" ><p>Dear Ben,<br>
+The case created in CCADB is Case 00000814.</p>
+</div><div class="activity"><div class="change">Flags: <span class="activity-deleted">needinfo?(leonardo.maldonado)</span></div><div class="change">Summary: Add GSE root certificates &rarr; Add GSE SMIME Roots to Mozilla root store</div></div></div><div class="change-set" id="c7"><div class="comment" data-id="15578196" data-no="7"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-7" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a13031423_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-7"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-7" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c7">Comment 7</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-09-20 13:11 PDT" data-time="1632168702">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-7">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div id="att-9242139"
+         class="attachment"
+         data-id="9242139" itemscope itemtype="http://schema.org/MediaObject">
+      <meta itemprop="name" content="CCADB.PNG">
+      <meta itemprop="contentSize" content="48452">
+      <meta itemprop="encodingFormat" content="image/png">
+      <div class="label">
+        Attached image
+          <a class="link lightbox" href="attachment.cgi?id=9242139" itemprop="contentUrl">
+        <span id="att-9242139-description" itemprop="description">CCADB Case</span></a>
+        — <a href="attachment.cgi?id=9242139&amp;action=edit" itemprop="url">Details</a>
+      </div>
+    </div>
+
+  <div
+      class="comment-text markdown-body empty"
+      id="ct-7" data-comment-id="15578196" data-ismarkdown="true" ></div></div><div class="change-set" id="c8"><div class="comment" data-id="15578283" data-no="8"
+       data-tags="">
+    
+    <table class="layout-table change-head assignee" id="ch-8" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_661011" id="a13031423_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+              <span class="user-role">Assignee</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-8"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-8" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c8">Comment 8</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-09-20 13:51 PDT" data-time="1632171085">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-8">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-8" data-comment-id="15578283" data-ismarkdown="true" ><p>Thanks.  To help you get going, I&#39;ll upload the PEMs of your root certificates into Case 814 in the CCADB.</p>
+</div></div><div class="change-set" id="c9"><div class="comment" data-id="15578296" data-no="9"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-9" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a13031423_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-9"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-9" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c9">Comment 9</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-09-20 14:01 PDT" data-time="1632171698">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-9">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-9" data-comment-id="15578296" data-ismarkdown="true" ><p>Thanks a lot Ben, I&#39;ll be waiting to continue providing additional information by your request.</p>
+</div></div><div class="change-set" id="c10"><div class="comment" data-id="15578363" data-no="10"
+       data-tags="">
+    
+    <table class="layout-table change-head assignee" id="ch-10" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_661011" id="a13031423_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+              <span class="user-role">Assignee</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-10"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-10" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c10">Comment 10</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-09-20 14:43 PDT" data-time="1632174232">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-10">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-10" data-comment-id="15578363" data-ismarkdown="true" ><p>The PEM files you have provided for the EC root (GSE ECDSA RAIZ) are actually for the &quot;GSE ECDSA SUBORDINADA&quot;, and I didn&#39;t see the 384-bit ECDSA root downloadable from your website, only the RSA root.</p>
+</div></div><div class="change-set" id="c11"><div class="comment" data-id="15578382" data-no="11"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-11" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a13031423_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-11"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-11" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c11">Comment 11</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-09-20 15:10 PDT" data-time="1632175840">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-11">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-11" data-comment-id="15578382" data-ismarkdown="true" ><p>Dear Ben,<br>
+Sorry by my mistake.<br>
+All certificates from GSE are published in the URL <a href="https://certs2.gse.com.co/" rel="nofollow">https://certs2.gse.com.co/</a><br>
+Also I copy the base64 following<br>
+-----BEGIN CERTIFICATE-----<br>
+MIIDcjCCAvigAwIBAgIKKb64em7LKJmZKTAKBggqhkjOPQQDAzCB7DEXMBUGA1UE<br>
+CRMOd3d3LmdzZS5jb20uY28xHjAcBgkqhkiG9w0BCQEWD2luZm9AZ3NlLmNvbS5j<br>
+bzEXMBUGA1UEAxMOR1NFIEVDRFNBIFJBSVoxEjAQBgNVBAUTCTkwMDIwNDI3ODEX<br>
+MBUGA1UECxMOR1NFIENBIFJBSVogUjIxLTArBgNVBAoTJEdFU1RJT04gREUgU0VH<br>
+VVJJREFEIEVMRUNUUk9OSUNBIFMuQTEUMBIGA1UEBxMLQm9nb3RhIEQuQy4xGTAX<br>
+BgNVBAgTEERpc3RyaXRvIENhcGl0YWwxCzAJBgNVBAYTAkNPMB4XDTIxMDQwNzE0<br>
+MzAwOFoXDTQ2MDQwODE0MzAwOFowgewxFzAVBgNVBAkTDnd3dy5nc2UuY29tLmNv<br>
+MR4wHAYJKoZIhvcNAQkBFg9pbmZvQGdzZS5jb20uY28xFzAVBgNVBAMTDkdTRSBF<br>
+Q0RTQSBSQUlaMRIwEAYDVQQFEwk5MDAyMDQyNzgxFzAVBgNVBAsTDkdTRSBDQSBS<br>
+QUlaIFIyMS0wKwYDVQQKEyRHRVNUSU9OIERFIFNFR1VSSURBRCBFTEVDVFJPTklD<br>
+QSBTLkExFDASBgNVBAcTC0JvZ290YSBELkMuMRkwFwYDVQQIExBEaXN0cml0byBD<br>
+YXBpdGFsMQswCQYDVQQGEwJDTzB2MBAGByqGSM49AgEGBSuBBAAiA2IABO81xiow<br>
+fNrWzx8C93a3fSH8UBsDak+Diih/n2j2qeaRi83CqdXIj9sBxArssce3v/EJuLkk<br>
+qoFc4axjitJvEFmz3Yva5Yk+BwRKs8GG7MEumOvb798ZO+a+VAPFJ6DclqNjMGEw<br>
+DwYDVR0TAQH/BAUwAwEB/zAfBgNVHSMEGDAWgBSHQE6FmagnV5DkD04L/TpEoQFV<br>
+UDAdBgNVHQ4EFgQUh0BOhZmoJ1eQ5A9OC/06RKEBVVAwDgYDVR0PAQH/BAQDAgGG<br>
+MAoGCCqGSM49BAMDA2gAMGUCMHaWmMBJRbNTVeJoQVdqfgflEzmyjiUGdJ5ZoY1n<br>
+txE6mhEWaG8vM08DkQ6pSgZ2ngIxAOiJx26d5G2cx1va0lIu/vTX84GhJZOPc+Jy<br>
+c+YEPoVaCRupQIJYRVRaJxyxv5OO4w==<br>
+-----END CERTIFICATE-----</p>
+</div></div><div class="change-set" id="c12"><div class="comment" data-id="15578383" data-no="12"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-12" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a13031423_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-12"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-12" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c12">Comment 12</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-09-20 15:12 PDT" data-time="1632175924">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-12">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div id="att-9242157"
+         class="attachment patch"
+         data-id="9242157" itemscope itemtype="http://schema.org/MediaObject">
+      <meta itemprop="name" content="Root_ECD_GSE_ECDSA.pem">
+      <meta itemprop="contentSize" content="1276">
+      <meta itemprop="encodingFormat" content="text/plain">
+      <div class="label">
+        Attached patch
+          <meta itemprop="contentUrl" content="attachment.cgi?id=9242157">
+          <a class="link" href="attachment.cgi?id=9242157&amp;action=diff">
+        <span id="att-9242157-description" itemprop="description">Root_ECD_GSE_ECDSA.pem</span></a>
+        — <a href="attachment.cgi?id=9242157&amp;action=edit" itemprop="url">Details</a>
+          — <a href="/page.cgi?id=splinter.html&ignore=&bug=1707136&attachment=9242157">Splinter Review</a>
+      </div>
+    </div>
+
+  <div
+      class="comment-text markdown-body empty"
+      id="ct-12" data-comment-id="15578383" data-ismarkdown="true" ></div><div class="activity"><div class="change">
+        <a href="/attachment.cgi?id=9218397&amp;action=edit"
+           title="Root_ECD_GSE_ECDSA.pem"
+           class=""
+        >Attachment #9218397</a> -
+        Attachment is obsolete: true</div></div></div><div class="change-set" id="c13"><div class="comment" data-id="15589415" data-no="13"
+       data-tags="">
+    
+    <table class="layout-table change-head assignee" id="ch-13" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_661011" id="a13031423_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+              <span class="user-role">Assignee</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-13"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-13" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c13">Comment 13</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-09-28 16:30 PDT" data-time="1632871838">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-13">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div id="att-9243339"
+         class="attachment"
+         data-id="9243339" itemscope itemtype="http://schema.org/MediaObject">
+      <meta itemprop="name" content="2021 - GSE - Reporte de Atestiguamiento Independiente WT2021.pdf">
+      <meta itemprop="contentSize" content="710570">
+      <meta itemprop="encodingFormat" content="application/pdf">
+      <div class="label">
+        Attached file
+          <a class="link" href="attachment.cgi?id=9243339" itemprop="contentUrl">
+        <span id="att-9243339-description" itemprop="description">2021 - GSE - Reporte de Atestiguamiento Independiente WT2021.pdf</span></a>
+        — <a href="attachment.cgi?id=9243339&amp;action=edit" itemprop="url">Details</a>
+      </div>
+    </div>
+
+  <div
+      class="comment-text markdown-body empty"
+      id="ct-13" data-comment-id="15589415" data-ismarkdown="true" ></div></div><div class="change-set" id="c14"><div class="comment" data-id="15602526" data-no="14"
+       data-tags="">
+    
+    <table class="layout-table change-head assignee" id="ch-14" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_661011" id="a13031423_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+              <span class="user-role">Assignee</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-14"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-14" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c14">Comment 14</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-10-07 09:52 PDT" data-time="1633625542">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-14">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-14" data-comment-id="15602526" data-ismarkdown="true" ><p>The 2021 WebTrust Audit report with seal has been added to the CCADB.  I now need to confirm that GSE has a CPS that addresses email validation.</p>
+</div></div><div class="change-set" id="c15"><div class="comment" data-id="15602906" data-no="15"
+       data-tags="">
+    
+    <table class="layout-table change-head assignee" id="ch-15" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_661011" id="a13031423_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+              <span class="user-role">Assignee</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-15"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-15" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c15">Comment 15</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-10-07 13:59 PDT" data-time="1633640349">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-15">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-15" data-comment-id="15602906" data-ismarkdown="true" ><p>For each root - &quot;If only requesting the Email trust bit, then attach an example S/MIME certificate to the bug.&quot;</p>
+</div></div><div class="change-set" id="c16"><div class="comment" data-id="15602922" data-no="16"
+       data-tags="">
+    
+    <table class="layout-table change-head assignee" id="ch-16" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_661011" id="a13031423_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+              <span class="user-role">Assignee</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-16"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-16" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c16">Comment 16</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-10-07 14:12 PDT" data-time="1633641136">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-16">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-16" data-comment-id="15602922" data-ismarkdown="true" ><p>There is a requirement in section 3.3.5 of the Mozilla Root Store Policy,<br>
+<a href="https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/#33-cps-and-cpses" rel="nofollow">https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/#33-cps-and-cpses</a>, that requires CPSs and CPSes follow RFC 3647 - &quot;Effective for versions dated April 1, 2020 or later, CPs and CPSes MUST be structured according to RFC 3647.&quot; It should be in English, and although I can translate the relevant language, I am looking for language that shows that GSE CAs check for the applicant&#39;s control over the email address prior to certificate issuance.  See <a href="https://wiki.mozilla.org/CA/Required_or_Recommended_Practices#Email_Challenge-Response" rel="nofollow">https://wiki.mozilla.org/CA/Required_or_Recommended_Practices#Email_Challenge-Response</a> and <a href="https://wiki.mozilla.org/CA/Required_or_Recommended_Practices#Verifying_Email_Address_Control" rel="nofollow">https://wiki.mozilla.org/CA/Required_or_Recommended_Practices#Verifying_Email_Address_Control</a>.</p>
+</div></div><div class="change-set" id="c17"><div class="comment" data-id="15613473" data-no="17"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-17" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a13031423_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-17"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-17" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c17">Comment 17</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-10-14 14:25 PDT" data-time="1634246725">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-17">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-17" data-comment-id="15613473" data-ismarkdown="true" ><p>(In reply to Ben Wilson from <a class="bz_bug_link
+          bz_status_ASSIGNED" href="/show_bug.cgi?id=1707136#c15" title="ASSIGNED - Add GSE SMIME Roots to Mozilla root store">comment #15</a>)</p>
+<blockquote>
+<p>For each root - &quot;If only requesting the Email trust bit, then attach an example S/MIME certificate to the bug.&quot;<br>
+Hello Ben,<br>
+For RSA, following lines are the certificate<br>
+-----BEGIN CERTIFICATE-----<br>
+MIIIITCCBgmgAwIBAgIKetw10TUwhruCzTANBgkqhkiG9w0BAQsFADCBhjEeMBwG<br>
+CSqGSIb3DQEJARYPaW5mb0Bnc2UuY29tLmNvMSUwIwYDVQQDExxBdXRvcmlkYWQg<br>
+U3Vib3JkaW5hZGEgMDEgR1NFMQwwCgYDVQQLEwNQS0kxDDAKBgNVBAoTA0dTRTEU<br>
+MBIGA1UEBxMLQm9nb3RhIEQuQy4xCzAJBgNVBAYTAkNPMB4XDTIwMTIwMjIwMzMw<br>
+MFoXDTIyMTIwMjIwMzMwMFowggGKMSkwJwYDVQQJDCBDQUxMRSA3MyAjIDcgLSAz<br>
+MSBQSVNPIDMgVE9SUkUgQjFDMEEGA1UEDQw6UGVydGVuZWNpZW50ZSBFbXByZXNh<br>
+IHBvciBHU0UgQ2FsbGUgNzMgNy0zMSBQaXNvIDMgVG9ycmUgQjEmMCQGA1UEAwwd<br>
+R1JBVEVGVUwgREVBRCBNT05UQcORTyBTSUVSUkExETAPBgNVBAUTCDEzNzE5MDQ5<br>
+MRIwEAYDVQQIDAlTQU5UQU5ERVIxFDASBgNVBAcMC0JVQ0FSQU1BTkdBMS0wKwYJ<br>
+KoZIhvcNAQkBFh5ncmF0ZWZ1bC5tb250YW5vQHBheW5ldC5jb20uY28xCzAJBgNV<br>
+BAYTAkNPMTkwNwYDVQQMDDBEaXJlY3RvciBTZWd1cmlkYWQgRWxlY3Ryb25pY2Eg<br>
+QWRtaW5pc3RyYWRvciBQS0kxEzARBgNVBAoMClBBWU5FVCBTQVMxGTAXBgorBgEE<br>
+AaRmAQMCDAk5MDEwNDMwMDQxDDAKBgNVBCkMA0MuQzCCASIwDQYJKoZIhvcNAQEB<br>
+BQADggEPADCCAQoCggEBAIAw80P/52ZyzKoKsYqdH1ZBEkhAO6g7fhlHVIwwNH0N<br>
+4maFMnf6D00UARh0MK3HzzMBUW8wKwOgqxrDi6rpBzCDl1kHi9JrBXJak5HuJZoY<br>
+OZihLEtVVdSeCkEVgRL8LORf4rBptfIxJhuwywY0NlorImtYTwTyMXUD0BEymA5l<br>
+WLCGp2Gt6+DY4OcRQhMvs4WoWi7bnXQcTcaip4hOny1HkfkjF+05ssEWm07a/4nw<br>
+yDAh57R64scB6WVbMzr4dQE/ex5czm6jm9lZ++T1pHYSNVYhRNFMC6/orlKdV7yS<br>
+alP9+ng4R4dsq0yBbgdrQCA9Jpep7n4kHz1onfj/1QkCAwEAAaOCAogwggKEMAwG<br>
+A1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUQbzUOXi4g6MXGgiaqbgEAgkt2JkwaAYI<br>
+KwYBBQUHAQEEXDBaMDIGCCsGAQUFBzAChiZodHRwczovL2NlcnRzMi5nc2UuY29t<br>
+LmNvL0NBX1NVQjAxLmNydDAkBggrBgEFBQcwAYYYaHR0cHM6Ly9vY3NwMi5nc2Uu<br>
+Y29tLmNvMCkGA1UdEQQiMCCBHmdyYXRlZnVsLm1vbnRhbm9AcGF5bmV0LmNvbS5j<br>
+bzCCATcGA1UdIAEB/wSCASswggEnMIIBIwYLKwYBBAGB8yABBAgwggESMHkGCCsG<br>
+AQUFBwICMG0Ma0xhIHV0aWxpemFjacOzbiBkZSBlc3RlIGNlcnRpZmljYWRvIGVz<br>
+dMOhIHN1amV0byBhIGxhcyBQb2zDrXRpY2FzIGRlIENlcnRpZmljYWRvIGV4cHVl<br>
+c3RhcyBlbiBsYSBVUkwgZGUgQ1BTMIGUBggrBgEFBQcCARaBh2h0dHBzOi8vZ3Nl<br>
+LmNvbS5jby9kb2N1bWVudG9zL2Zvcm11bGFyaW9zLzI1YWJyMTkvMDgwNDIwMjAv<br>
+UG9sJUMzJUFEdGljYXMlMjBkZSUyMENlcnRpZmljYWRvJTIwcGFyYSUyMENlcnRp<br>
+ZmljYWRvcyUyMERpZ2l0YWxlcyUyMFY4LnBkZjAdBgNVHSUEFjAUBggrBgEFBQcD<br>
+AgYIKwYBBQUHAwQwNQYDVR0fBC4wLDAqoCigJoYkaHR0cHM6Ly9jcmwyLmdzZS5j<br>
+b20uY28vQ0FfU1VCMDEuY3JsMB0GA1UdDgQWBBRc6Oj099/fmGrCDr33481ZHVgw<br>
+pDAOBgNVHQ8BAf8EBAMCBPAwDQYJKoZIhvcNAQELBQADggIBAETyJAyXEMQT2ssu<br>
+5ixH92j6YgdJOKvJ3fUzHD+/auAAljRK1rwjgFecuTXOi7s4egtOdHu4Yjk3UpRx<br>
+1Jtinm8Ov63arqPorNZLCEiWOpFDvczNp3/gd6jlcf6kwse5EQKeEOhdvHStnYOy<br>
+YNP0+E7TY+t5JkIBO9K48EsyCNbHluu8oFQmKw26b+dWAZ0V1cnxSWyiooX2Sost<br>
+aXo56tAzpsGdO+XuLpd5qJWkZT8RP6gNhaUi7BI/6ybrVV7cnPITXWxIGiX9uyG6<br>
+InUw+tmL2s7Nab64y5PQXBEWTercoS8X2/TyERKKZro3Vs1y1OuqGVo4dp37VBo2<br>
+2N5MTkd78HEsDCPAqgMHUb+e8foY8DjDW+IC2BHQ+b7odkUni+S3H/tcNJi0tPkU<br>
+Dx4ZjtYhfIGgQJ7aLL04AyzRc4jJ53zsG1B6RGYEUKMeD+iSco9HOABljwqK4/L2<br>
+hGyJxWBJVHK0EiAgfvsMZSRvd/IdjaKcgQcErsDAV+SqSEqTMsX/ZCBJukWGthjj<br>
+xEn39JWlNt5vbBgaEOt6ESwy26srVd6MHgCaRpppR1nDDU2jkaHXFF4mJ3aKREWm<br>
+AS/qd+9IBbT9EKkSEm4uEJusivZ2oKLBoR7AGjZuoeGTN/LI3xVW1y+GRJMIrV0k<br>
+Am7PWLhRpa7TD2OZNhp66gG9KmZD<br>
+-----END CERTIFICATE-----</p>
+</blockquote>
+<p>For ECDSA, following lines are the certificate:<br>
+-----BEGIN CERTIFICATE-----<br>
+MIIFezCCBQKgAwIBAgIKcMkSib5xqUEpqTAKBggqhkjOPQQDAzCB9jEXMBUGA1UE<br>
+CRMOd3d3LmdzZS5jb20uY28xHjAcBgkqhkiG9w0BCQEWD2luZm9AZ3NlLmNvbS5j<br>
+bzEeMBwGA1UEAxMVR1NFIEVDRFNBIFNVQk9SRElOQURBMRIwEAYDVQQFEwk5MDAy<br>
+MDQyNzgxGjAYBgNVBAsTEUdTRSBFQ0RTQSBSMiBTVUIxMS0wKwYDVQQKEyRHRVNU<br>
+SU9OIERFIFNFR1VSSURBRCBFTEVDVFJPTklDQSBTLkExFDASBgNVBAcTC0JvZ290<br>
+YSBELkMuMRkwFwYDVQQIExBEaXN0cml0byBDYXBpdGFsMQswCQYDVQQGEwJDTzAe<br>
+Fw0yMTA0MDcxNDU1MjBaFw0yMjExMDcxNzExMDBaMIIBkzEtMCsGA1UECQwkQ0FM<br>
+TEUgNzMgIyA3IC0gMzEgRURJRklDSU8gRUwgQ0FNSU5PMUMwQQYDVQQNDDpQZXJ0<br>
+ZW5lY2llbnRlIEVtcHJlc2EgcG9yIEdTRSBDYWxsZSA3MyA3LTMxIFBpc28gMyBU<br>
+b3JyZSBCMSwwKgYDVQQDDCNBTkdFTE8gTEVPTkFSRE8gTUFMRE9OQURPIENPTlRS<br>
+RVJBUzERMA8GA1UEBRMINzk2MzA2ODExDzANBgNVBAgMBkJPR09UQTEUMBIGA1UE<br>
+BwwLQk9HT1RBIEQuQy4xLDAqBgkqhkiG9w0BCQEWHWxlb25hcmRvLm1hbGRvbmFk<br>
+b0Bnc2UuY29tLmNvMQswCQYDVQQGEwJDTzEjMCEGA1UEDAwaUFJPRFVDVCBNQU5B<br>
+R0VSIFNQRUNJQUxJU1QxLDAqBgNVBAoMI0dFU1RJT04gREUgU0VHVVJJREFEIEVM<br>
+RUNUUk9OSUNBIFNBMRkwFwYKKwYBBAGkZgEDAgwJOTAwMjA0MjcyMQwwCgYDVQQp<br>
+DANDLkMwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARKSXpblOLQJN6/s6+CSb7F<br>
+1TfuxlW85BPnzhFBMrPtzf+ApTVLVlHzvGZ75TClHM5yvlEegsX1R7RYPz4dwwvj<br>
+o4IB1jCCAdIwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBT0M1GoHN8GYuXe6O9h<br>
+eQNPmPa7CTBqBggrBgEFBQcBAQReMFwwNAYIKwYBBQUHMAKGKGh0dHBzOi8vY2Vy<br>
+dHMyLmdzZS5jb20uY28vQ0FfRUNTVUIwMS5jcnQwJAYIKwYBBQUHMAGGGGh0dHBz<br>
+Oi8vb2NzcDIuZ3NlLmNvbS5jbzAoBgNVHREEITAfgR1sZW9uYXJkby5tYWxkb25h<br>
+ZG9AZ3NlLmNvbS5jbzCBggYDVR0gBHsweTB3BgsrBgEEAYHzIAEECTBoMGYGCCsG<br>
+AQUFBwIBFlpodHRwczovL2dzZS5jb20uY28vZG9jdW1lbnRvcy9jYWxpZGFkL0RQ<br>
+Qy9EZWNsYXJhY2lvbl9kZV9QcmFjdGljYXNfZGVfQ2VydGlmaWNhY2lvbl9WOS5w<br>
+ZGYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMDgGA1UdHwQxMC8wLaAr<br>
+oCmGJ2h0dHRwczovL2NybDIuZ3NlLmNvbS5jby9DQV9FQ1NVQjAxLmNybDAdBgNV<br>
+HQ4EFgQU3SKFBDj7AVkUgVDBavkJZsnPQW0wDgYDVR0PAQH/BAQDAgTwMAoGCCqG<br>
+SM49BAMDA2cAMGQCMHznYMHl/XVOxFDz+DTeOuzGk0HOJli0QBekeLcVMwUFNS36<br>
+QPN1TdoWbzO9WQbX7QIwCK5h7D8l//lI6HhuTnVa0eJGUfN7nEj/LX6zcGSLyyr0<br>
+cYTU1yspLPcmsUAmnTHr<br>
+-----END CERTIFICATE-----</p>
+</div></div><div class="change-set" id="c18"><div class="comment" data-id="15613476" data-no="18"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-18" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a13031423_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-18"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-18" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c18">Comment 18</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-10-14 14:26 PDT" data-time="1634246790">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-18">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div id="att-9246019"
+         class="attachment"
+         data-id="9246019" itemscope itemtype="http://schema.org/MediaObject">
+      <meta itemprop="name" content="GratefulRSA.cer">
+      <meta itemprop="contentSize" content="2924">
+      <meta itemprop="encodingFormat" content="application/x-x509-ca-cert">
+      <div class="label">
+        Attached file
+          <a class="link" href="attachment.cgi?id=9246019" itemprop="contentUrl">
+        <span id="att-9246019-description" itemprop="description">GratefulRSA.cer</span></a>
+        — <a href="attachment.cgi?id=9246019&amp;action=edit" itemprop="url">Details</a>
+      </div>
+    </div>
+
+  <div
+      class="comment-text markdown-body "
+      id="ct-18" data-comment-id="15613476" data-ismarkdown="true" ><p>Certificate for S-Mime with RSA algorithm</p>
+</div></div><div class="change-set" id="c19"><div class="comment" data-id="15613477" data-no="19"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-19" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a13031423_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-19"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-19" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c19">Comment 19</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-10-14 14:27 PDT" data-time="1634246828">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-19">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div id="att-9246020"
+         class="attachment"
+         data-id="9246020" itemscope itemtype="http://schema.org/MediaObject">
+      <meta itemprop="name" content="LeonardoECDSA.cer">
+      <meta itemprop="contentSize" content="1992">
+      <meta itemprop="encodingFormat" content="application/x-x509-ca-cert">
+      <div class="label">
+        Attached file
+          <a class="link" href="attachment.cgi?id=9246020" itemprop="contentUrl">
+        <span id="att-9246020-description" itemprop="description">LeonardoECDSA.cer</span></a>
+        — <a href="attachment.cgi?id=9246020&amp;action=edit" itemprop="url">Details</a>
+      </div>
+    </div>
+
+  <div
+      class="comment-text markdown-body "
+      id="ct-19" data-comment-id="15613477" data-ismarkdown="true" ><p>Certificate for S/MIME with ECDSA Algorithm</p>
+</div></div><div class="change-set" id="c20"><div class="comment" data-id="15613514" data-no="20"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-20" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a13031423_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a13031423_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-20"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-20" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c20">Comment 20</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-10-14 14:38 PDT" data-time="1634247524">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-20">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-20" data-comment-id="15613514" data-ismarkdown="true" ><p>(In reply to Ben Wilson from <a class="bz_bug_link
+          bz_status_ASSIGNED" href="/show_bug.cgi?id=1707136#c16" title="ASSIGNED - Add GSE SMIME Roots to Mozilla root store">comment #16</a>)</p>
+<blockquote>
+<p>There is a requirement in section 3.3.5 of the Mozilla Root Store Policy,<br>
+<a href="https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/#33-cps-and-cpses" rel="nofollow">https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/#33-cps-and-cpses</a>, that requires CPSs and CPSes follow RFC 3647 - &quot;Effective for versions dated April 1, 2020 or later, CPs and CPSes MUST be structured according to RFC 3647.&quot; It should be in English, and although I can translate the relevant language, I am looking for language that shows that GSE CAs check for the applicant&#39;s control over the email address prior to certificate issuance.  See <a href="https://wiki.mozilla.org/CA/Required_or_Recommended_Practices#Email_Challenge-Response" rel="nofollow">https://wiki.mozilla.org/CA/Required_or_Recommended_Practices#Email_Challenge-Response</a> and <a href="https://wiki.mozilla.org/CA/Required_or_Recommended_Practices#Verifying_Email_Address_Control" rel="nofollow">https://wiki.mozilla.org/CA/Required_or_Recommended_Practices#Verifying_Email_Address_Control</a>.</p>
+</blockquote>
+<p>Hello Ben,<br>
+The mail address is validated in the process of issuance, as can be verified in the section 6.5 of our CPS that I copy a translation into english below<br>
+The applicant&#39;s data: type of identification, identification number, names, surname, nit (applies for company), business name (applies for company), address information: department, municipality, address and »EMAIL« are reviewed and / or validated in together with the application form and the documentation provided for each type of digital certificate.</p>
+<p>I put between »« symbols the part that specyfy the need to verify EMAIL</p>
+<p>Please let me know if this requirement is satisfyied with this translation.<br>
+Best regars, Leonardo.</p>
+</div></div><div class="change-set" id="a15113141_661011"><div class="change" id="aa15113141_661011">
+    <table class="layout-table change-head assignee" role="presentation">
+      <tr>
+        <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a15113141_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+        </td>
+        <td class="change-author"><div class="vcard vcard_661011" id="a15113141_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+            <span class="user-role">Assignee</span>
+        </td>
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="as-a15113141_661011"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+      <tr id="ar-a15113141_661011">
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#a15113141_661011">Updated</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-10-14 15:06 PDT" data-time="1634249214">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div><div class="activity"><div class="change">Flags: needinfo?(bwilson)</div></div></div><div class="change-set" id="a19266662_661011"><div class="change" id="aa19266662_661011">
+    <table class="layout-table change-head assignee" role="presentation">
+      <tr>
+        <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a19266662_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+        </td>
+        <td class="change-author"><div class="vcard vcard_661011" id="a19266662_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+            <span class="user-role">Assignee</span>
+        </td>
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="as-a19266662_661011"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+      <tr id="ar-a19266662_661011">
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#a19266662_661011">Updated</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-12-01 15:52 PST" data-time="1638402735">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div><div class="activity"><div class="change">Flags: <span class="activity-deleted">needinfo?(bwilson)</span></div><div class="change">Whiteboard: [ca-initial] &rarr; [ca-verifying] BW 2021-12-01</div></div></div><div class="change-set" id="c21"><div class="comment" data-id="15685835" data-no="21"
+       data-tags="">
+    
+    <table class="layout-table change-head assignee" id="ch-21" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a19266662_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_661011" id="a19266662_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+              <span class="user-role">Assignee</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-21"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-21" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c21">Comment 21</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-12-06 15:09 PST" data-time="1638832194">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-21">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-21" data-comment-id="15685835" data-ismarkdown="true" ><p>Dear Leonardo,<br>
+Currently, a review of the information in the CCADB (and here) indicates that I need:<br>
+1 - the intermediate/subordinate CA certificates of the root CA certificates need to be uploaded to the CCADB<br>
+2 - for each root, the CCADB has to be populated for &quot;Application Information&quot;</p>
+<ul>
+<li>Explain why this root cert needs to be included in the root store, rather than being signed by another CA’s root certificate that is already included.</li>
+<li>Explain the unique function of this root, especially if requesting inclusion of multiple roots.</li>
+<li>Root Certificate Download URL - A public URL through which the CA certificate can be directly downloaded.<br>
+See <a href="https://ccadb.force.com/a004o00000FsKpEAAV" rel="nofollow">https://ccadb.force.com/a004o00000FsKpEAAV</a> and <a href="https://ccadb.force.com/a004o00000FsL0JAAV" rel="nofollow">https://ccadb.force.com/a004o00000FsL0JAAV</a><br>
+3 - Complete the &quot;PKI Hierarchy&quot; section for each root in the application (at these ^ URLs)<br>
+Let me know if you have any questions.<br>
+Thanks,<br>
+Ben</li>
+</ul>
+</div><div class="activity"><div class="change">Flags: needinfo?(leonardo.maldonado)</div></div></div><div class="change-set" id="c22"><div class="comment" data-id="15685922" data-no="22"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-22" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a19266662_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a19266662_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-22"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-22" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c22">Comment 22</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2021-12-06 16:22 PST" data-time="1638836528">1 year ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-22">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-22" data-comment-id="15685922" data-ismarkdown="true" ><p>Dear Ben,<br>
+Thanks for your prompt reply, I take each point to answer<br>
+1 - the intermediate/subordinate CA certificates of the root CA certificates need to be uploaded to the CCADB<br>
+The intermediates/subordinates CAs were uploaded to<br>
+<a href="https://ccadb.force.com/s/account/0014o00001oAWzAAAW/gse-ecdsa-raiz?tabset-e9496=2" rel="nofollow">https://ccadb.force.com/s/account/0014o00001oAWzAAAW/gse-ecdsa-raiz?tabset-e9496=2</a><br>
+<a href="https://ccadb.force.com/s/account/0014o00001oAWasAAG/autoridad-raiz-gse?tabset-e9496=2" rel="nofollow">https://ccadb.force.com/s/account/0014o00001oAWasAAG/autoridad-raiz-gse?tabset-e9496=2</a></p>
+<p>2 - for each root, the CCADB has to be populated for &quot;Application Information&quot;<br>
+I filled Application Information section in CCADB site for cases R00001830 and R00001831<br>
+I Explained why both root certs needs to be included in the root store, esentially because each root use a different signature algorithm (RSA &amp; ECDSA), and users from each root needs to sign S/MIME, but only acquiring one certificate.<br>
+Each root have functions related with signature algorithm, but both need to sign S/MIME</p>
+<p>3 - Complete the &quot;PKI Hierarchy&quot; : I uploaded the correspondant subCAs, but none of the check boxes of cross-signed or external related actions apply for the root certificates that we want to include.</p>
+<p>Thanks in advance for your help, please let me know if you need additional information.<br>
+Regards,<br>
+Leonardo</p>
+</div><div class="activity"><div class="change">Flags: <span class="activity-deleted">needinfo?(leonardo.maldonado)</span></div></div></div><div class="change-set" id="a29361709_661011"><div class="change" id="aa29361709_661011">
+    <table class="layout-table change-head assignee" role="presentation">
+      <tr>
+        <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a29361709_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+        </td>
+        <td class="change-author"><div class="vcard vcard_661011" id="a29361709_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+            <span class="user-role">Assignee</span>
+        </td>
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="as-a29361709_661011"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+      <tr id="ar-a29361709_661011">
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#a29361709_661011">Updated</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2022-03-28 13:03 PDT" data-time="1648497782">10 months ago</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div><div class="activity"><div class="change">Priority: P3 &rarr; P2</div></div></div><div class="change-set" id="c23"><div class="comment" data-id="15835080" data-no="23"
+       data-tags="">
+    
+    <table class="layout-table change-head assignee" id="ch-23" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a29361709_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_661011" id="a29361709_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+              <span class="user-role">Assignee</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-23"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-23" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c23">Comment 23</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2022-03-28 13:37 PDT" data-time="1648499834">10 months ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-23">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-23" data-comment-id="15835080" data-ismarkdown="true" ><p>In the CCADB, below &quot;Mozilla Additional Requirements&quot; there are two places needing responses:</p>
+<ul>
+<li><a href="https://wiki.mozilla.org/CA/Required_or_Recommended_Practices" rel="nofollow">https://wiki.mozilla.org/CA/Required_or_Recommended_Practices</a></li>
+<li><a href="https://wiki.mozilla.org/CA/Forbidden_or_Problematic_Practices" rel="nofollow">https://wiki.mozilla.org/CA/Forbidden_or_Problematic_Practices</a>.</li>
+</ul>
+<p>Please read these two wiki pages above and provide a response where it says, &quot;CA&#39;s Response to Required Practices&quot; and &quot;CA&#39;s Response to Forbidden Practices&quot;.  Also, please pay special attention to these two sections:</p>
+<ul>
+<li><a href="https://wiki.mozilla.org/CA/Required_or_Recommended_Practices#Email_Challenge-Response" rel="nofollow">https://wiki.mozilla.org/CA/Required_or_Recommended_Practices#Email_Challenge-Response</a></li>
+<li><a href="https://wiki.mozilla.org/CA/Required_or_Recommended_Practices#Verifying_Email_Address_Control" rel="nofollow">https://wiki.mozilla.org/CA/Required_or_Recommended_Practices#Verifying_Email_Address_Control</a></li>
+</ul>
+</div></div><div class="change-set" id="a49328537_1"><div class="change" id="aa49328537_1">
+    <table class="layout-table change-head " role="presentation">
+      <tr>
+        <td rowspan="2" class="change-gravatar"><div class="vcard vcard_1" id="a49328537_1"><img src="https://secure.gravatar.com/avatar/eaa3c40fff208819d0810fc338eea0aa?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+        </td>
+        <td class="change-author"><div class="vcard vcard_1" id="a49328537_1"><a class="email " href="/user_profile?user_id=1" > <span class="fna">Nobody; OK to take it and work on it</span></a>
+</div>
+        </td>
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="as-a49328537_1"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+      <tr id="ar-a49328537_1">
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#a49328537_1">Updated</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2022-11-14 14:23 PST" data-time="1668464610">3 months ago</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div><div class="activity"><div class="change">Product: NSS &rarr; CA Program</div></div></div><div class="change-set" id="c24"><div class="comment" data-id="16214575" data-no="24"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-24" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a49328537_1"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a49328537_1"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-24"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-24" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c24">Comment 24</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2022-12-26 08:47 PST" data-time="1672073266">1 month ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-24">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-24" data-comment-id="16214575" data-ismarkdown="true" ><p>Dear Ben, taking into account the CCADB Update: &quot;Root Inclusion Request&quot; Type of case, could you give me feedback on the process to follow in order to continue the Root Inclusion Request case?</p>
+</div></div><div class="change-set" id="a52957043_661011"><div class="change" id="aa52957043_661011">
+    <table class="layout-table change-head assignee" role="presentation">
+      <tr>
+        <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a52957043_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+        </td>
+        <td class="change-author"><div class="vcard vcard_661011" id="a52957043_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+            <span class="user-role">Assignee</span>
+        </td>
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="as-a52957043_661011"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+      <tr id="ar-a52957043_661011">
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#a52957043_661011">Updated</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2022-12-26 14:18 PST" data-time="1672093116">1 month ago</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div><div class="activity"><div class="change">Flags: needinfo?(bwilson)</div></div></div><div class="change-set" id="c25"><div class="comment" data-id="16215659" data-no="25"
+       data-tags="">
+    
+    <table class="layout-table change-head assignee" id="ch-25" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a52957043_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_661011" id="a52957043_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+              <span class="user-role">Assignee</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-25"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-25" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c25">Comment 25</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2022-12-27 16:21 PST" data-time="1672186908">1 month ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-25">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-25" data-comment-id="16215659" data-ismarkdown="true" ><p>A review of <a href="https://ccadb-public.secure.force.com/mozilla/PrintViewForCase?CaseNumber=00000814" rel="nofollow">https://ccadb-public.secure.force.com/mozilla/PrintViewForCase?CaseNumber=00000814</a> indicates missing information for your company and root certificates.  Under our new process, some of this information will need to be provided in a new &quot;Add/Update Root Case&quot; - <a href="https://www.ccadb.org/cas/updates" rel="nofollow">https://www.ccadb.org/cas/updates</a>  (which I have created for you as case #1192 - <a href="https://ccadb.force.com/5008Z000026GS25QAG" rel="nofollow">https://ccadb.force.com/5008Z000026GS25QAG</a>), while other information can be provided in the existing Root Inclusion Case #814.<br>
+In Case #1192, go to the &quot;Root Information&quot; tab and submit all requested information for both root CAs.  Also, provide your document repository information and any new certificate policies or certification practice statements under the &quot;Policy Documents&quot; tab.<br>
+In Case #814, it looks like you need to provide a value statement, which can be uploaded as an attachment to this <a class="bz_bug_link
+          bz_status_ASSIGNED" href="/show_bug.cgi?id=1707136" title="ASSIGNED - Add GSE SMIME Roots to Mozilla root store">Bug #1707136</a>.  See <a href="https://wiki.mozilla.org/CA/Quantifying_Value" rel="nofollow">https://wiki.mozilla.org/CA/Quantifying_Value</a> for more information.<br>
+Feel free to reach out if you have further questions.</p>
+</div><div class="activity"><div class="change">Flags: <span class="activity-deleted">needinfo?(bwilson)</span></div></div></div><div class="change-set" id="c26"><div class="comment" data-id="16215680" data-no="26"
+       data-tags="">
+    
+    <table class="layout-table change-head assignee" id="ch-26" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_661011" id="a52957043_661011"><img src="https://secure.gravatar.com/avatar/01529deaafc1a9fb5aa0a376a7bea560?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_661011" id="a52957043_661011"><a class="email " href="/user_profile?user_id=661011" > <span class="fna">Ben Wilson</span></a>
+</div>
+              <span class="user-role">Assignee</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-26"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-26" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c26">Comment 26</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2022-12-27 16:55 PST" data-time="1672188937">1 month ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-26">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div id="att-9309940"
+         class="attachment"
+         data-id="9309940" itemscope itemtype="http://schema.org/MediaObject">
+      <meta itemprop="name" content="Gestión de Seguridad Electrónica – GSE SA - Audit Report and Management Assertion 2022.pdf">
+      <meta itemprop="contentSize" content="358085">
+      <meta itemprop="encodingFormat" content="application/pdf">
+      <div class="label">
+        Attached file
+          <a class="link" href="attachment.cgi?id=9309940" itemprop="contentUrl">
+        <span id="att-9309940-description" itemprop="description">Gestión de Seguridad Electrónica – GSE SA - Audit Report and Management Assertion 2022.pdf</span></a>
+        — <a href="attachment.cgi?id=9309940&amp;action=edit" itemprop="url">Details</a>
+      </div>
+    </div>
+
+  <div
+      class="comment-text markdown-body empty"
+      id="ct-26" data-comment-id="16215680" data-ismarkdown="true" ></div></div><div class="change-set" id="c27"><div class="comment" data-id="16216362" data-no="27"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-27" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a52957043_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a52957043_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-27"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-27" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c27">Comment 27</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2022-12-28 14:52 PST" data-time="1672267956">1 month ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-27">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-27" data-comment-id="16216362" data-ismarkdown="true" ><p>(In reply to Ben Wilson from <a class="bz_bug_link
+          bz_status_ASSIGNED" href="/show_bug.cgi?id=1707136#c25" title="ASSIGNED - Add GSE SMIME Roots to Mozilla root store">comment #25</a>)</p>
+<blockquote>
+<p>A review of <a href="https://ccadb-public.secure.force.com/mozilla/PrintViewForCase?CaseNumber=00000814" rel="nofollow">https://ccadb-public.secure.force.com/mozilla/PrintViewForCase?CaseNumber=00000814</a> indicates missing information for your company and root certificates.  Under our new process, some of this information will need to be provided in a new &quot;Add/Update Root Case&quot; - <a href="https://www.ccadb.org/cas/updates" rel="nofollow">https://www.ccadb.org/cas/updates</a>  (which I have created for you as case #1192 - <a href="https://ccadb.force.com/5008Z000026GS25QAG" rel="nofollow">https://ccadb.force.com/5008Z000026GS25QAG</a>), while other information can be provided in the existing Root Inclusion Case #814.<br>
+In Case #1192, go to the &quot;Root Information&quot; tab and submit all requested information for both root CAs.  Also, provide your document repository information and any new certificate policies or certification practice statements under the &quot;Policy Documents&quot; tab.<br>
+In Case #814, it looks like you need to provide a value statement, which can be uploaded as an attachment to this <a class="bz_bug_link
+          bz_status_ASSIGNED" href="/show_bug.cgi?id=1707136" title="ASSIGNED - Add GSE SMIME Roots to Mozilla root store">Bug #1707136</a>.  See <a href="https://wiki.mozilla.org/CA/Quantifying_Value" rel="nofollow">https://wiki.mozilla.org/CA/Quantifying_Value</a> for more information.<br>
+Feel free to reach out if you have further questions.</p>
+</blockquote>
+<p>Hi Ben,<br>
+The case #1192 new was updated and we are work on case # 814.</p>
+<p>We have some questions it is possible to have a call?   <a href="mailto:leonardo.maldonado@gse.com.co" rel="nofollow">leonardo.maldonado@gse.com.co</a></p>
+</div></div><div class="change-set" id="c28"><div class="comment" data-id="16238278" data-no="28"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-28" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a52957043_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a52957043_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-28"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-28" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c28">Comment 28</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2023-01-16 14:29 PST" data-time="1673908175">19 days ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-28">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div id="att-9312505"
+         class="attachment"
+         data-id="9312505" itemscope itemtype="http://schema.org/MediaObject">
+      <meta itemprop="name" content="JUSTIFICATION-CASE-n°-814.docx">
+      <meta itemprop="contentSize" content="27114">
+      <meta itemprop="encodingFormat" content="application/pdf">
+      <div class="label">
+        Attached file
+          <a class="link" href="attachment.cgi?id=9312505" itemprop="contentUrl">
+        <span id="att-9312505-description" itemprop="description">JUSTIFICATION CASE n° 814.docx</span></a>
+        — <a href="attachment.cgi?id=9312505&amp;action=edit" itemprop="url">Details</a>
+      </div>
+    </div>
+
+  <div
+      class="comment-text markdown-body "
+      id="ct-28" data-comment-id="16238278" data-ismarkdown="true" ><p>JUSTIFICATION CASE n° 814</p>
+</div></div><div class="change-set" id="c29"><div class="comment" data-id="16238283" data-no="29"
+       data-tags="">
+    
+    <table class="layout-table change-head reporter" id="ch-29" role="presentation">
+      <tr>
+          <td rowspan="2" class="change-gravatar"><div class="vcard vcard_684157" id="a52957043_661011"><img src="https://secure.gravatar.com/avatar/e12212ba4873fb54c4f1d1cd749ca0ce?d=mm&size=64" class="gravatar" width="32" height="32">
+</div>
+          </td>
+
+          <td class="change-author"><div class="vcard vcard_684157" id="a52957043_661011"><a class="email " href="/user_profile?user_id=684157" > <span class="fna">Leonardo Maldonado</span></a>
+</div>
+              <span class="user-role">Reporter</span>
+          </td>
+
+        <td rowspan="2" class="comment-actions"><div role="group">
+          <button type="button" class="change-spinner minor iconic" id="cs-29"
+                  aria-label="Collapse" aria-expanded="true"
+                  data-strings='{ "collapse_label": "Collapse", "expand_label": "Expanded" }'>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+        </div></td>
+      </tr>
+
+      <tr id="cr-29" >
+        <td>
+          <h3 class="change-name">
+            <a href="/show_bug.cgi?id=1707136#c29">Comment 29</a>
+          </h3>
+          &bull;
+          <div class="change-time"><span class="rel-time" title="2023-01-16 14:30 PST" data-time="1673908249">19 days ago</span>
+          </div>
+        </td>
+      </tr>
+
+      <tr id="ctag-29">
+        <td colspan="2" class="comment-tags">
+        </td>
+      </tr>
+    </table>
+
+    
+  </div><div
+      class="comment-text markdown-body "
+      id="ct-29" data-comment-id="16238283" data-ismarkdown="true" ><p>Dear Ben,</p>
+<p>Continuing with the case No. 814 attached file that contains the declaration of value complying with the quantifying value <a href="https://wiki.mozilla.org/CA/Quantifying_Value" rel="nofollow">https://wiki.mozilla.org/CA/Quantifying_Value</a> , We remain attentive to continue with the case.</p>
+</div></div><div id="new-comment-notice">
+          You need to <a href="/show_bug.cgi?id=1707136&amp;GoAheadAndLogIn=1">log in</a>
+          before you can comment on or make changes to this bug.
+        </div>
+
+
+
+<div id="bottom-actions">
+  <div id="bottom-right-actions">
+    <button type="button" id="top-btn" class="secondary" aria-label="Go to Page Top">Top &uarr;</button>
+  </div>
+</div></div> 
+</main> 
+</div> 
+
+
+</body>
+</html>
